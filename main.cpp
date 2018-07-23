@@ -1,12 +1,14 @@
 #include <iostream>
-#include "Solution_1.h"
+#include "Solution_2.h"
 using namespace std;
 
 int main() {
 
-	int a, b;
-	Solution_1 solution;
-	cin >> a >> b;
-	cout << solution.aplusb(a, b) << endl;
+	int a;
+	Solution_2 solution;
+	cin >> a;
+	cout << solution.runningTest(a) << endl;
 
+	getchar();
+	getchar();
 }
