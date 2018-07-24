@@ -1,4 +1,6 @@
-﻿  Solution_4.cpp
-d:\visual studio 2015\lintcode\lintcode\solution_4.cpp(41): warning C4244: “return”: 从“const __int64”转换到“int”，可能丢失数据
+﻿  Solution_5.cpp
+  正在生成代码...
+  正在跳过...(未检测到相关更改)
+  main.cpp
   LintCode.vcxproj -> D:\Visual Studio 2015\LintCode\Debug\LintCode.exe
   LintCode.vcxproj -> D:\Visual Studio 2015\LintCode\Debug\LintCode.pdb (Partial PDB)

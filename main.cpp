@@ -1,13 +1,18 @@
 #include <iostream>
-#include "Solution_4.h"
+#include <vector>
+#include "Solution_5.h"
 using namespace std;
 
 int main() {
 
-	int a;
-	Solution_4 solution;
+	int a, b;
+	vector<int> c;
+	Solution_5 solution;
+	
 	cin >> a;
-	cout << solution.nthUglyNumber_2(a) << endl;
+	while (cin >> b)	c.push_back(b);
+
+	cout << solution.kthLargestElement_3(a, c) << endl;
 
 	getchar();
 	getchar();

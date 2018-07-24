@@ -24,12 +24,14 @@
     <ClCompile Include="Solution_2.cpp" />
     <ClCompile Include="Solution_3.cpp" />
     <ClCompile Include="Solution_4.cpp" />
+    <ClCompile Include="Solution_5.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Solution_1.h" />
     <ClInclude Include="Solution_2.h" />
     <ClInclude Include="Solution_3.h" />
     <ClInclude Include="Solution_4.h" />
+    <ClInclude Include="Solution_5.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{12618BC3-CD3D-47DF-8A22-0F1CA2A51082}</ProjectGuid>
