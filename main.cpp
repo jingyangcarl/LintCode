@@ -1,22 +1,21 @@
 #include <iostream>
 #include <vector>
-#include "Solution_7.h"
+#include "Solution_8.h"
 using namespace std;
 
 int main() {
 
 	
 
-	Solution_7 solution;
+	Solution_8 solution;
 
-	TreeNode *tree = nullptr;
-	string strTree;
+	string a = "";
+	
+	solution.rotateString(a, 10);
 
-	solution.createTree(tree);
-
-	cout << solution.serializeDFS(tree);
-
+	cout << a << endl;
 
 	getchar();
 	getchar();
+	
 }
