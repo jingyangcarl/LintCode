@@ -1,19 +1,16 @@
 #include <iostream>
 #include <vector>
-#include "Solution_8.h"
+#include "Solution_9.h"
 using namespace std;
 
 int main() {
 
 	
 
-	Solution_8 solution;
-
-	string a = "";
+	Solution_9 solution;
 	
-	solution.rotateString(a, 10);
+	solution.fizzBuzz(15);
 
-	cout << a << endl;
 
 	getchar();
 	getchar();
