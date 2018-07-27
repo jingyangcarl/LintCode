@@ -1,24 +1,21 @@
 #include <iostream>
 #include <vector>
-#include "Solution_11.h"
+#include "Solution_12.h"
 using namespace std;
 
 int main() {
 
 	
 
-	Solution_11 solution;
-	
-	TreeNode *root = nullptr;
-	vector<int> result;
-	vector<int>::iterator iter;
-	solution.createTree(root);
+	Solution_12 solution;
 
-	int k1, k2;
-	cin >> k1 >> k2;
-	result = solution.searchRange(root, k1, k2);
-	for (iter = result.begin(); iter != result.end(); iter++)
-		cout << *iter++ << " ";
+	solution.push(1);
+	cout << solution.pop() << endl;
+	solution.push(2);
+	solution.push(3);
+	cout << solution.min() << endl;
+	solution.push(1);
+	cout << solution.min() << endl;
 
 	getchar();
 	getchar();
