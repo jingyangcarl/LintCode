@@ -1,21 +1,17 @@
 #include <iostream>
 #include <vector>
-#include "Solution_12.h"
+#include "Solution_13.h"
 using namespace std;
 
 int main() {
 
 	
 
-	Solution_12 solution;
+	Solution_13 solution;
 
-	solution.push(1);
-	cout << solution.pop() << endl;
-	solution.push(2);
-	solution.push(3);
-	cout << solution.min() << endl;
-	solution.push(1);
-	cout << solution.min() << endl;
+	string source, target;
+	cin >> source >> target;
+	cout << solution.strStr(source.c_str(), target.c_str());
 
 	getchar();
 	getchar();
