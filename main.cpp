@@ -1,17 +1,19 @@
 #include <iostream>
 #include <vector>
-#include "Solution_13.h"
+#include "Solution_14.h"
 using namespace std;
 
 int main() {
 
 	
 
-	Solution_13 solution;
+	Solution_14 solution;
+	vector<int> nums;
+	int num, a;
+	cin >> a;
+	while (cin >> num) nums.push_back(num);
 
-	string source, target;
-	cin >> source >> target;
-	cout << solution.strStr(source.c_str(), target.c_str());
+	cout << solution.binarySearch(nums, a) << endl;
 
 	getchar();
 	getchar();
