@@ -1,19 +1,19 @@
 #include <iostream>
 #include <vector>
-#include "Solution_15.h"
+#include "Solution_16.h"
 using namespace std;
 
 int main() {
 
 	
 
-	Solution_15 solution;
+	Solution_16 solution;
 
 	int num;
 	vector<int> nums;
 	while (cin >> num) nums.push_back(num);
 
-	solution.permute(nums);
+	solution.permuteUnique(nums);
 
 	getchar();
 	getchar();
