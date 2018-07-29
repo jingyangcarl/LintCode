@@ -10,7 +10,5 @@ public:
 	* @param nums: A set of numbers.
 	* @return: A list of lists. All valid subsets.
 	*/
-	vector<vector<int>> subsetsWithDup(vector<int> &nums) {
-		// write your code here
-	}
+	vector<vector<int>> subsetsWithDup(vector<int> &nums);
 };

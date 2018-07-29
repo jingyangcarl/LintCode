@@ -1,19 +1,18 @@
 #include <iostream>
 #include <vector>
-#include "Solution_17.h"
+#include "Solution_20.h"
 using namespace std;
 
 int main() {
 
 	
 
-	Solution_17 solution;
+	Solution_20 solution;
 
 	int num;
-	vector<int> nums;
-	while (cin >> num) nums.push_back(num);
+	cin >> num;
 
-	solution.subsets(nums);
+	solution.dicesSum_2(num);
 
 	getchar();
 	getchar();
