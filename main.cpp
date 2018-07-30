@@ -1,29 +1,23 @@
 #include <iostream>
+#include <string>
 #include <vector>
-#include "Solution_28.h"
+#include "Momenta.h"
 using namespace std;
 
 int main() {
 
-	Solution_28 solution;
+	Momenta momenta;
 
-	int row, col;
-	cin >> row >> col;
-	vector<vector<int>> matrix;
+	//int n;
+	//cin >> n;
+	//char A('A'), B('B'), C('C');
 
-	for (int i = 0; i < row; i++) {
-		vector<int> rol;
-		for (int j = 0; j < col; j++) {
-			int num;
-			cin >> num;
-			rol.push_back(num);
-		}
-		matrix.push_back(rol);
-	}
-
-	int num;
-	cin >> num;
-
-	cout << solution.searchMatrix(matrix, num);
+	//momenta.Recursion(2, A, B, C);
 	
+	string input;
+	cin >> input;
+	momenta.Expression(input);
+
+	getchar();
+	getchar();
 }

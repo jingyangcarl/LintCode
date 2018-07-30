@@ -18,7 +18,7 @@ bool Solution_28::searchMatrix(vector<vector<int>>& matrix, int target) {
 		if (target < matrix.at(down).at(0)) down = up;
 		else up = down;
 
-		while (left < right) {
+		while (left <= right) {
 			lrMiddle = (left + right) / 2;
 			int lrMiddleNum = matrix.at(down).at(lrMiddle);
 			if (target < lrMiddleNum) right = lrMiddle - 1;

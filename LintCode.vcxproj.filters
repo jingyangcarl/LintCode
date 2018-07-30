@@ -81,6 +81,12 @@
     <ClCompile Include="Solution_28.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Solution_29.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Momenta.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Solution_1.h">
@@ -144,6 +150,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Solution_28.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Solution_29.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Momenta.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
