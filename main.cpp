@@ -1,23 +1,14 @@
 #include <iostream>
-#include <string>
-#include <vector>
-#include "Momenta.h"
+#include "Solution_29.h"
 using namespace std;
 
 int main() {
 
-	Momenta momenta;
+	Solution_29 solution;
 
-	//int n;
-	//cin >> n;
-	//char A('A'), B('B'), C('C');
+	string s1, s2, s3;
+	cin >> s1 >> s2 >> s3;
 
-	//momenta.Recursion(2, A, B, C);
-	
-	string input;
-	cin >> input;
-	momenta.Expression(input);
+	cout << solution.isInterleave(s1, s2, s3);
 
-	getchar();
-	getchar();
 }
