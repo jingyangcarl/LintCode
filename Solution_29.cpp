@@ -11,38 +11,32 @@ bool Solution_29::isInterleave(string & s1, string & s2, string & s3) {
 
 			string::iterator temIter1 = iter1, temIter2 = iter2, temIter3;
 			int maxLen1(0), maxLen2(0);
+			// Carl: get the longest matched string length of each string and record in corresponding maxLen and temIter;
 			temIter3 = iter3;
 			while (temIter1 != s1.end() && *temIter1 == *temIter3) maxLen1++, temIter1++, temIter3++;
 			temIter3 = iter3;
 			while (temIter2 != s2.end() && *temIter2 == *temIter3) maxLen2++, temIter2++, temIter3++;
 
+			// Carl: classified different if else blocks based on the maxLens
 			if (maxLen1 == 0 && maxLen2 == 0) {
 				return false;
 			}
-			/*else if (maxLen1 == 0) {
-				iter2 += maxLen2;
-				iter3 += maxLen2;
-			}
-			else if (maxLen2 == 0) {
-				iter1 += maxLen1;
-				iter3 += maxLen1;
-			}*/
 			else if (maxLen1 > maxLen2) {
 
+				// Carl: if the end of the longest matched string is the same as the rest string, the duplicated string length should be substracted
 				temIter2 = iter2;
-				while (temIter1 - 1 != s1.begin() && temIter2 != s2.end() && *(temIter1 - 1) == *temIter2) {
+				while (temIter1 - 1 != s1.begin() && temIter2 != s2.end() && *(temIter1 - 1) == *temIter2)
 					maxLen1--, temIter1--, temIter2++;
-				}
 
 				iter1 = temIter1;
 				iter3 += maxLen1;
 			}
 			else if (maxLen1 < maxLen2) {
 
+				// Carl: if the end of the longest matched string is the same as the rest string, the duplicated string length should be substracted
 				temIter1 = iter1;
-				while (temIter2 - 1 != s2.begin() && temIter1 != s1.end() && *(temIter2 - 1) == *temIter1) {
+				while (temIter2 - 1 != s2.begin() && temIter1 != s1.end() && *(temIter2 - 1) == *temIter1)
 					maxLen2--, temIter2--, temIter1++;
-				}
 
 				iter2 = temIter2;
 				iter3 += maxLen2;
