@@ -19,11 +19,35 @@ bool Solution_29::isInterleave(string & s1, string & s2, string & s3) {
 			if (maxLen1 == 0 && maxLen2 == 0) {
 				return false;
 			}
-			else if (maxLen1 <= maxLen2) {
+			/*else if (maxLen1 == 0) {
+				iter2 += maxLen2;
+				iter3 += maxLen2;
+			}
+			else if (maxLen2 == 0) {
+				iter1 += maxLen1;
+				iter3 += maxLen1;
+			}*/
+			else if (maxLen1 > maxLen2) {
+
+				temIter2 = iter2;
+				while (temIter1 - 1 != s1.begin() && temIter2 != s2.end() && *(temIter1 - 1) == *temIter2) {
+					maxLen1--, temIter1--, temIter2++;
+				}
+
+				iter1 = temIter1;
+				iter3 += maxLen1;
+			}
+			else if (maxLen1 < maxLen2) {
+
+				temIter1 = iter1;
+				while (temIter2 - 1 != s2.begin() && temIter1 != s1.end() && *(temIter2 - 1) == *temIter1) {
+					maxLen2--, temIter2--, temIter1++;
+				}
+
 				iter2 = temIter2;
 				iter3 += maxLen2;
 			}
-			else if (maxLen1 > maxLen2) {
+			else {
 				iter1 = temIter1;
 				iter3 += maxLen1;
 			}
@@ -49,6 +73,10 @@ bool Solution_29::isInterleave(string & s1, string & s2, string & s3) {
 //s1 = "aab";
 //s2 = "a";
 //s3 = "aaab";
+//
+//s1 = "abcabc";
+//s2 = "ac";
+//s3 = "aabcabcc";
 //
 //s1 = "sdfjas;dfjoisdufzjkndfasdkfja;sdfa;dfa;dfaskdjhfasdhjdfakhdgfkajdfasdjfgajksdfgaksdhfasdkbfjkdsfbajksdfhakjsdfbajkdfbakdjsfgaksdhgfjkdsghfkdsfgadsjfgkajsdgfkjasdfh";
 //s2 = "dfnakdjnfjkzghdufguweygfasjkdfgb2gf8asf7tgbgasjkdfgasodf7asdgfajksdfguayfgaogfsdkagfsdhfajksdvfbgkadsghfakdsfgasduyfgajsdkfgajkdghfaksdgfuyadgfasjkdvfjsdkvfakfgauyksgfajkefgjkdasgfdjksfgadjkghfajksdfgaskdjfgasjkdgfuyaegfasdjkfgajkdfygadjskfgjkadfg";

@@ -1,4 +1,4 @@
 ﻿  Solution_29.cpp
-d:\visual studio 2015\lintcode\lintcode\solution_29.cpp(43): warning C4715: “Solution_29::isInterleave”: 不是所有的控件路径都返回值
+d:\visual studio 2015\lintcode\lintcode\solution_29.cpp(67): warning C4715: “Solution_29::isInterleave”: 不是所有的控件路径都返回值
   LintCode.vcxproj -> D:\Visual Studio 2015\LintCode\Debug\LintCode.exe
   LintCode.vcxproj -> D:\Visual Studio 2015\LintCode\Debug\LintCode.pdb (Partial PDB)
