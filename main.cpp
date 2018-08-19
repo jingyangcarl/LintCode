@@ -1,14 +1,17 @@
 #include <iostream>
-#include "Solution_29.h"
+#include "Solution_30.h"
 using namespace std;
 
 int main() {
 
-	Solution_29 solution;
+	Solution_30 solution;
 
-	string s1, s2, s3;
-	cin >> s1 >> s2 >> s3;
+	vector<Interval> intervals;
+	Interval a(5, 7);
 
-	cout << solution.isInterleave(s1, s2, s3);
+	solution.insert(intervals, a);
+
+	getchar();
+	getchar();
 
 }
