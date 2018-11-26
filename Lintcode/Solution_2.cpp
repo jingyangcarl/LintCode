@@ -3,10 +3,6 @@
 #include "Solution_2.h"
 using namespace std;
 
-/*
-* @param n: A long integer
-* @return: An integer, denote the number of trailing zeros in n!
-*/
 long long Solution_2::trailingZeros(long long n) {
 
 	// Carl: calculate factorial;
