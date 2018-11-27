@@ -144,6 +144,23 @@ vector<Interval> Solution_30::insert_2(vector<Interval>& intervals, Interval new
 	}
 	else {
 		// Carl: the inserted start and end are not the same as the previous list at all, or completely the same
+		// Carl: tags for start and end are identified from the insertion above
+		if (startTag && endTag) {
+			// Carl: both inserted start and end are the same as one the boundaries in the list, including upper boundaries and lower boundaries
+			// Carl: if the index of the startIndex is an odd, the repeated starting boundary is an upper boundary
+			// Carl: if the index of the startIndex is an even, the repreated starting boundary is a lower boundary
+
+			iterLinear = linearIntervals.begin() + startIndex;
+			if (startIndex % 2 == 1) {
+				// Carl: odd, 
+			}
+			else {
+				// Carl: even, 
+			}
+		}
+		else {
+			// Carl: no repreat boundaries
+		}
 	}
 
 
