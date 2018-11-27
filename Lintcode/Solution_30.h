@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <iostream>
 using namespace std;
 
 //Definition of Interval:
@@ -20,6 +21,7 @@ public:
 	* @param newInterval: new interval.
 	* @return: A new interval list.
 	*/
+	void test();
 	vector<Interval> insert(vector<Interval> &intervals, Interval newInterval);
 	vector<Interval> insert_2(vector<Interval> &intervals, Interval newInterval);
 };

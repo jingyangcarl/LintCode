@@ -1,47 +1,45 @@
 #include "Solution_30.h"
 
-vector<Interval> Solution_30::insert(vector<Interval>& intervals, Interval newInterval) {
-	// write your code here
+void Solution_30::test() {
+	// Carl: run the test
 
-	if (intervals.empty()) {
-		intervals.push_back(newInterval);
-		return intervals;
+	// Carl: enter the number of Intervals
+	int n;
+	cout << "Enter the number of Intervals: ";
+	cin >> n;
+
+	// Carl: enter intervals
+	vector<Interval> intervals;
+	cout << "Enter intervals:" << endl;
+	for (int i = 0; i < n; i++) {
+		int a, b;
+		cin >> a >> b;
+		Interval interval(a, b);
+		intervals.push_back(interval);
 	}
 
-	int locatorSS(0), locatorSE(0), locatorES(0), locatorEE(0);
-	vector<Interval>::iterator iter;
-	iter = intervals.begin();
-	while (iter != intervals.end() && newInterval.start > (*iter).start) iter++, locatorSS++;
-	iter = intervals.begin();
-	while (iter != intervals.end() && newInterval.start > (*iter).end) iter++, locatorSE++;
-	iter = intervals.begin();
-	while (iter != intervals.end() && newInterval.end > (*iter).start) iter++, locatorES++;
-	iter = intervals.begin();
-	while (iter != intervals.end() && newInterval.end > (*iter).end) iter++, locatorEE++;
+	// Carl: enter inserted interval
+	cout << "Enter inserted interval: " << endl;
+	int a, b;
+	cin >> a >> b;
+	Interval interval(a, b);
 
-	// (a,b),(c,d) inserted with (i,j)
-	//							|	SS	|	SE	|	ES	|	EE	|
-	// i < a < d <= j			|	0	|	0	|	2	|	2	|	(a,b),(c,d)	->	(i,j)
-	// i < a < c <= j < d		|	0	|	0	|	2	|	1	|	(a,b),(c,d) ->	(i,d)
-	// i < a < b <= j < c		|	0	|	0	|	1	|	1	|	(a,b),(c,d) ->	(i,j),(c,d)
-	// i < a <= j < b			|	0	|	0	|	1	|	0	|	(a,b),(c,d) ->	(i,b),(c,d)
-	// i < j < a				|	0	|	0	|	0	|	0	|	(a,b),(c,d) ->	(i,j),(a,b),(c,d)
-	// a <= i < b < d <= j		|	1	|	0	|	2	|	2	|	(a,b),(c,d) ->	(a,j)
-	// a <= i < b < c <= j < d	|	1	|	0	|	2	|	1	|	(a,b),(c,d) ->	(a,d)
-	// a <= i < b <= j < c		|	1	|	0	|	1	|	1	|	(a,b),(c,d) ->	(a,j),(c,d)
-	// a <= i < j < b			|	1	|	0	|	1	|	0	|	(a,b),(c,d) ->	(a,b),(c,d)
-	// b <= i < c < d <=j		|	1	|	1	|	2	|	2	|	(a,b),(c,d) ->	(a,b),(i,j)
-	// b <= i < c <= j < d		|	1	|	1	|	2	|	1	|	(a,b),(c,d) ->	(a,b),(i,d)
-	// b <= i < j < c			|	1	|	1	|	1	|	1	|	(a,b),(c,d) ->	(a,b),(i,j),(c,d)
-	// c <= i < d <= j			|	2	|	1	|	2	|	2	|	(a,b),(c,d) ->	(a,b),(c,j)
-	// c <= i < j < d			|	2	|	1	|	2	|	1	|	(a,b),(c,d) ->	(a,b),(c,d)
-	// d <= i < j				|	2	|	2	|	2	|	2	|	(a,b),(c,d) ->	(a,b),(c,d),(i,j)
+	// Carl: run the algorithm
+	intervals = insert(intervals, interval);
 
+	// Carl: show the result
+	cout << "After insertion: " << endl;
+	vector<Interval>::iterator iter = intervals.begin();
+	while (iter != intervals.end()) {
+		cout << (*iter).start << " " << (*iter).end << " ";
+		iter++;
+	}
+	cout << endl;
 
-
+	return;
 }
 
-vector<Interval> Solution_30::insert_2(vector<Interval>& intervals, Interval newInterval) {
+vector<Interval> Solution_30::insert(vector<Interval>& intervals, Interval newInterval) {
 	// Carl: the number of all elements in the intervals should be an even number, after inserting the newInterval, this property should not be changed
 	// Carl: the idea is to decide whether the index of each element in the newInterval belongs to the following situation
 	// Carl: Let's say the inserting index of start and end component in newInterval is indexStart, and indexEnd, we will have
@@ -71,31 +69,57 @@ vector<Interval> Solution_30::insert_2(vector<Interval>& intervals, Interval new
 	// Carl: insert start and end
 	int startIndex(0), endIndex(0);
 	bool startTag(0), endTag(0);
-	// Carl: insert start into the linearIntervals
 	vector<int>::iterator iterLinear = linearIntervals.begin();
-	while (newInterval.start > (*iterLinear)) iterLinear++;
-	if (newInterval.start == (*iterLinear)) {
-		startTag = 1;
-		startIndex = iterLinear - linearIntervals.begin();
-	}
-	else if (newInterval.start < (*iterLinear)) {
-		iterLinear = linearIntervals.insert(iterLinear, newInterval.start);
-		startIndex = iterLinear - linearIntervals.begin();
+	if (!linearIntervals.empty()) {
+		// Carl: insert start into the linearIntervals
+		for (iterLinear; iterLinear != linearIntervals.end(); iterLinear++)
+			if (newInterval.start <= (*iterLinear))
+				break;
+		if (iterLinear != linearIntervals.end()) {
+			if (newInterval.start == (*iterLinear)) {
+				startTag = 1;
+				startIndex = iterLinear - linearIntervals.begin();
+			}
+			else if (newInterval.start < (*iterLinear)) {
+				iterLinear = linearIntervals.insert(iterLinear, newInterval.start);
+				startIndex = iterLinear - linearIntervals.begin();
+			}
+
+			// Carl: insert end into the linearIntervals
+			if (newInterval.end == newInterval.start) {
+				iterLinear = linearIntervals.insert(iterLinear + 1, newInterval.end);
+				endIndex = iterLinear - linearIntervals.begin();
+			}
+			else {
+				for (iterLinear; iterLinear != linearIntervals.end(); iterLinear++)
+					if (newInterval.end <= (*iterLinear))
+						break;
+				if (iterLinear != linearIntervals.end()) {
+					if (newInterval.end == (*iterLinear)) {
+						endTag = 1;
+						endIndex = iterLinear - linearIntervals.begin();
+					}
+					else if (newInterval.end < (*iterLinear)) {
+						iterLinear = linearIntervals.insert(iterLinear, newInterval.end);
+						endIndex = iterLinear - linearIntervals.begin();
+					}
+				}
+				else {
+					linearIntervals.push_back(newInterval.end);
+					endIndex = linearIntervals.size() - 1;
+				}
+			}
+		}
+		else {
+			linearIntervals.push_back(newInterval.start);
+			linearIntervals.push_back(newInterval.end);
+			endIndex = startIndex + 1;
+		}
 	}
 	else {
-		// Carl: error
-		return vector<Interval>();
-	}
-
-	// Carl: insert end into the linearIntervals
-	while (newInterval.end > (*iterLinear)) iterLinear++;
-	if (newInterval.end == (*iterLinear)) {
-		endTag = 1;
-		endIndex = iterLinear - linearIntervals.begin();
-	}
-	else if (newInterval.end < (*iterLinear)) {
-		iterLinear = linearIntervals.insert(iterLinear, newInterval.end);
-		endIndex = iterLinear - linearIntervals.begin();
+		linearIntervals.push_back(newInterval.start);
+		linearIntervals.push_back(newInterval.end);
+		endIndex = startIndex + 1;
 	}
 
 	if (linearIntervals.size() % 2 == 1) {
@@ -110,14 +134,34 @@ vector<Interval> Solution_30::insert_2(vector<Interval>& intervals, Interval new
 			if (startIndex % 2 == 1) {
 				// Carl: odd, indicating the start value is the same as one of an upper boundary
 				// Carl: under such situation, the element after the start (start element is included) should be erased
-				for (int i = 0; i < endIndex - startIndex; i++)
-					iterLinear = linearIntervals.erase(iterLinear);
+				if (endIndex % 2 == 1) {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted:    (i,     j)
+					for (int i = 0; i < endIndex - startIndex + 1; i++)
+						iterLinear = linearIntervals.erase(iterLinear);
+				}
+				else {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted:    (i,        j)
+					for (int i = 0; i < endIndex - startIndex; i++)
+						iterLinear = linearIntervals.erase(iterLinear);
+				}
 			}
 			else {
 				// Carl: even, indicating the start value is the same as one of a lower boundary
 				// Carl: under such situation, the element after the start (start element is not included) should be erased
-				for (int i = 0; i < endIndex - startIndex; i++)
-					iterLinear = linearIntervals.erase(iterLinear+1);
+				if (endIndex % 2 == 1) {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted: (i,        j)
+					for (int i = 0; i < endIndex - startIndex; i++)
+						iterLinear = linearIntervals.erase(iterLinear + 1);
+				}
+				else {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted: (i,    j)
+					for (int i = 1; i < endIndex - startIndex; i++)
+						iterLinear = linearIntervals.erase(iterLinear + 1);
+				}
 			}
 		}
 		else if (endTag) {
@@ -128,13 +172,33 @@ vector<Interval> Solution_30::insert_2(vector<Interval>& intervals, Interval new
 			iterLinear = linearIntervals.begin() + endIndex;
 			if (endIndex % 2 == 1) {
 				// Carl: odd, indicating the end value is the same as a lower boundary
-				for (int i = 0; i < endIndex - startIndex; i++)
-					iterLinear = linearIntervals.erase(iterLinear) - 1;
+				if (startIndex % 2 == 1) {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted:   (i,    j)
+					for (int i = 0; i < endIndex - startIndex + 1; i++)
+						iterLinear = linearIntervals.erase(iterLinear) - 1;
+				}
+				else {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted:(i,       j)
+					for (int i = 0; i < endIndex - startIndex; i++)
+						iterLinear = linearIntervals.erase(iterLinear) - 1;
+				}
 			}
 			else {
 				// Carl: even, indicating the end value is the same as an upper boundary
-				for (int i = 0; i < endIndex - startIndex; i++)
-					iterLinear = linearIntervals.erase(iterLinear - 1) - 1;
+				if (startIndex % 2 == 1) {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted:   (i,       j)
+					for (int i = 0; i < endIndex - startIndex; i++)
+						iterLinear = linearIntervals.erase(iterLinear - 1) - 1;
+				}
+				else {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted:       (i,   j)
+					for (int i = 1; i < endIndex - startIndex; i++)
+						iterLinear = linearIntervals.erase(iterLinear - 1) - 1;
+				}
 			}
 		}
 		else {
@@ -152,17 +216,85 @@ vector<Interval> Solution_30::insert_2(vector<Interval>& intervals, Interval new
 
 			iterLinear = linearIntervals.begin() + startIndex;
 			if (startIndex % 2 == 1) {
-				// Carl: odd, 
+				// Carl: odd, the repeated starting boundary is an upper boundary
+				if (endIndex % 2 == 1) {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted:	  (i,      j)
+					for (int i = 0; i < endIndex - startIndex + 1; i++)
+						iterLinear = linearIntervals.erase(iterLinear);
+				}
+				else {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted:    (i,   j)
+					for (int i = 0; i < endIndex - startIndex + 1; i++)
+						iterLinear = linearIntervals.erase(iterLinear);
+				}
 			}
 			else {
-				// Carl: even, 
+				// Carl: even, the repreated starting boundary is a lower boundary
+				if (endIndex % 2 == 1) {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted: (i,         j)
+					for (int i = 1; i < endIndex - startIndex; i++)
+						iterLinear = linearIntervals.erase(iterLinear);
+				}
+				else {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted: (i,      j)
+					for (int i = 0; i < endIndex - startIndex; i++)
+						iterLinear = linearIntervals.erase(iterLinear);
+				}
 			}
 		}
 		else {
 			// Carl: no repreat boundaries
+			iterLinear = linearIntervals.begin() + startIndex;
+			if (startIndex % 2 == 1) {
+				if (endIndex % 2 == 1) {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted:   (i,         j)
+					for (int i = 0; i < endIndex - startIndex; i++)
+						iterLinear = linearIntervals.erase(iterLinear);
+				}
+				else {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted:   (i,      j)
+					for (int i = 0; i < endIndex - startIndex + 1; i++)
+						iterLinear = linearIntervals.erase(iterLinear);
+				}
+			}
+			else {
+				// Carl: the inserted start is in between each pairs
+				if (endIndex % 2 == 1) {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted:       (i,     j)
+					iterLinear++;
+					for (int i = 1; i < endIndex - startIndex; i++)
+						iterLinear = linearIntervals.erase(iterLinear);
+				}
+				else {
+					// Carl: original: (a, b), (c, d)
+					// Carl: inserted:       (i,  j)
+					iterLinear++;
+					for (int i = 0; i < endIndex - startIndex; i++)
+						iterLinear = linearIntervals.erase(iterLinear);
+				}
+			}
 		}
 	}
 
+	// Carl: de-linearization
+	vector<Interval> returnInterval;
+	iterLinear = linearIntervals.begin();
+	for (int i = 0; i < linearIntervals.size() / 2; i++) {
+		returnInterval.push_back(Interval(*iterLinear, *(iterLinear + 1)));
+		iterLinear += 2;
+	}
 
+	return returnInterval;
+}
+
+vector<Interval> Solution_30::insert_2(vector<Interval>& intervals, Interval newInterval) {
+	// Carl: try stack
 	return vector<Interval>();
 }
