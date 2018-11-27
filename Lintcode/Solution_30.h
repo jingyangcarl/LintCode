@@ -21,4 +21,5 @@ public:
 	* @return: A new interval list.
 	*/
 	vector<Interval> insert(vector<Interval> &intervals, Interval newInterval);
+	vector<Interval> insert_2(vector<Interval> &intervals, Interval newInterval);
 };
