@@ -90,6 +90,9 @@
     <ClCompile Include="Solution_31.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Solution_32.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -164,10 +167,10 @@
     <ClInclude Include="Solution_30.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="Solution_31.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Solution_31.h">
+    <ClInclude Include="Solution_32.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
