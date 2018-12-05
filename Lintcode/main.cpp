@@ -1,11 +1,10 @@
 #include <iostream>
-#include <vector>
-#include "Solution_30.h"
+#include "Solution_35.h"
 using namespace std;
 
 int main() {
 
-	Solution_30 solution;
+	Solution_35 solution;
 	solution.test();
 
 	getchar();
