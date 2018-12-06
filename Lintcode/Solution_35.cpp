@@ -61,8 +61,7 @@ ListNode * Solution_35::reverse(ListNode * head) {
 		nodeStack.pop();
 		temp = temp->next;
 	}
-	rvsNode = rvsNode->next;
 
 	// Carl: return
-	return rvsNode;
+	return rvsNode->next;
 }
