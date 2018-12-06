@@ -32,9 +32,9 @@ void Solution_35::test() {
 ListNode * Solution_35::reverse(ListNode * head) {
 	// write your code here
 
-	ListNode *rvsNode = new ListNode(0);
+	static ListNode *rvsNode = new ListNode(0);
+	static stack<ListNode> nodeStack;
 	ListNode *temp(NULL);
-	stack<ListNode> nodeStack;
 
 	temp = head;
 	while (temp) {
