@@ -21,6 +21,6 @@ public:
 	 * @param head: n
 	 * @return: The new head of reversed linked list.
 	 */
-	void test();
 	ListNode * reverse(ListNode * head);
+	void test();
 };
