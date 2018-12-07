@@ -10,5 +10,6 @@ public:
 	 * @return: A integer indicate the sum of max subarray
 	 */
 	int maxSubArray(vector<int> &nums);
+	int maxSubArray_2(vector<int> &nums);
 	void test();
 };
