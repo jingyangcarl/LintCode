@@ -23,6 +23,20 @@ int Solution_46::majorityNumber(vector<int>& nums) {
 	return maxNum;
 }
 
+int Solution_46::majorityNumber_2(vector<int>& nums) {
+	// write your code here
+
+	// Carl: 
+	// Idea: 
+	// as illustrated in the description, the majority number should have a count larger than the half of the size of the array
+	// and except the maority number, there will be no other number have a total count larger than the half of the size of the array
+	// Pseudocode: 
+	//
+
+	
+	return 0;
+}
+
 void Solution_46::test() {
 	// write your test here
 
