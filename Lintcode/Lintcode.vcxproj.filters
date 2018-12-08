@@ -218,5 +218,6 @@
       <Filter>资源文件</Filter>
     </Text>
     <Text Include="Solution_44.txt" />
+    <Text Include="Solution_46.txt" />
   </ItemGroup>
 </Project>

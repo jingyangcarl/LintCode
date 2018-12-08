@@ -2,24 +2,25 @@
 
 int Solution_46::majorityNumber(vector<int>& nums) {
 	// write your code here
-	
+
 	map<int, int> numMap;
 
 	for (vector<int>::iterator iter = nums.begin(); iter != nums.end(); iter++) {
-		if (numMap.find(*iter) == numMap.end()) {
-			numMap.insert(*iter, 1);
-		}
-		else {
+		if (numMap.find(*iter) == numMap.end())
+			numMap.insert(pair<int, int>(*iter, 1));
+		else
 			(*numMap.find(*iter)).second++;
-		}
-	}
-	
-	int min(INT_MAX);
-	for (map<int, int>::iterator iter = numMap.begin(); iter != numMap.end(); iter++) {
-		if()
 	}
 
-	return 0;
+	int maxCount(INT_MIN), maxNum(INT_MIN);
+	for (map<int, int>::iterator iter = numMap.begin(); iter != numMap.end(); iter++) {
+		if ((*iter).second > maxCount) {
+			maxCount = (*iter).second;
+			maxNum = (*iter).first;
+		}
+	}
+
+	return maxNum;
 }
 
 void Solution_46::test() {
