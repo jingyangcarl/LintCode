@@ -225,5 +225,6 @@
     </Text>
     <Text Include="Solution_44.txt" />
     <Text Include="Solution_46.txt" />
+    <Text Include="Solution_50.txt" />
   </ItemGroup>
 </Project>
