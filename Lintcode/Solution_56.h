@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <map>
 #include <iostream>
 using namespace std;
 
@@ -11,4 +12,5 @@ public:
 	 * @return: [index1, index2] (index1 < index2)
 	 */
 	vector<int> twoSum(vector<int> &numbers, int target);
+	void test();
 };
