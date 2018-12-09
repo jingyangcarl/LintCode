@@ -12,5 +12,6 @@ public:
 	 * @return: [index1, index2] (index1 < index2)
 	 */
 	vector<int> twoSum(vector<int> &numbers, int target);
+	vector<int> twoSum_2(vector<int> &numbers, int target);
 	void test();
 };

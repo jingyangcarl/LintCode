@@ -54,6 +54,30 @@ vector<int> Solution_56::twoSum(vector<int>& numbers, int target) {
 	return result;
 }
 
+vector<int> Solution_56::twoSum_2(vector<int>& numbers, int target) {
+	// wirte your code here 
+
+	// Carl: 
+	// use map to save the complementary corresponding to eash elements
+
+	map<int, int> complementation;
+	// value index
+	vector<int> result;
+
+	vector<int>::iterator iter;
+	for (iter = numbers.begin(); iter != numbers.end(); iter++) {
+		if (complementation.count(target - *iter)) {
+			result.push_back(complementation.at(target - *iter));
+			result.push_back(iter - numbers.begin());
+			return result;
+		}
+		complementation.insert(pair<int, int>(*iter, iter - numbers.begin()));
+	}
+	result.push_back(-1);
+	result.push_back(-1);
+	return result;
+}
+
 void Solution_56::test() {
 	// write your test here 
 
@@ -70,7 +94,7 @@ void Solution_56::test() {
 	// Carl: algorithm
 	cin >> n;
 	vector<int> result;
-	result = twoSum(numbers, n);
+	result = twoSum_2(numbers, n);
 
 	// Carl: output
 	vector<int>::iterator iter;
