@@ -98,6 +98,7 @@
     <Text Include="Solution_44.txt" />
     <Text Include="Solution_46.txt" />
     <Text Include="Solution_50.txt" />
+    <Text Include="Solution_53.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
