@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 class Solution_64 {
@@ -13,5 +14,7 @@ public:
 	 */
 	void mergeSortedArray(int A[], int m, int B[], int n);
 	void mergeSortedArray_2(int A[], int m, int B[], int n);
+	void mergeSortedArray_3(int A[], int m, int B[], int n);
+	int compare(const void *a, const void *b);
 	void test();
 };

@@ -47,6 +47,17 @@ void Solution_64::mergeSortedArray_2(int A[], int m, int B[], int n) {
 	// Carl:
 	// Idea:
 	// concatenate array B to the end of array A and do quick sort
+
+	for (int i = 0; i < n; i++)
+		A[m + i] = B[i];
+	sort(A, A + m + n);
+}
+
+void Solution_64::mergeSortedArray_3(int A[], int m, int B[], int n) {
+	// write your code here
+	
+	// Carl:
+	// Idea: 
 }
 
 void Solution_64::test() {
