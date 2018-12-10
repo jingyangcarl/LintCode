@@ -58,7 +58,7 @@ vector<int> Solution_56::twoSum_2(vector<int>& numbers, int target) {
 	// wirte your code here 
 
 	// Carl: 
-	// use map to save the complementary corresponding to eash elements
+	// use map to save the complementary result corresponding to eash elements
 
 	map<int, int> complementation;
 	// value index
