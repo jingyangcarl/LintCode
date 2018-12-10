@@ -55,9 +55,26 @@ void Solution_64::mergeSortedArray_2(int A[], int m, int B[], int n) {
 
 void Solution_64::mergeSortedArray_3(int A[], int m, int B[], int n) {
 	// write your code here
-	
+
 	// Carl:
-	// Idea: 
+	// Idea:
+	// cause the size of A is the same as m + n,
+	// which there are extra spaces to fill the elements
+	// hence, using two pointers to compare each elements in A and B in order
+	// and fill the largest in the end of A
+	// PS: like compare the linked list
+
+	int *pA(A + m - 1), *pB(B + n - 1), *pC(A + m + n - 1);
+
+	while (pA != A - 1 && pB != B - 1)
+		*(pC--) = *pA > *pB ? *(pA--) : *(pB--);
+	if (pA == A - 1)
+		while (pB != B - 1)
+			*(pC--) = *(pB--);
+	// the followings can be commented out
+	if (pB == B - 1)
+		while (pA != A - 1)
+			*(pC--) = *(pA--);
 }
 
 void Solution_64::test() {
@@ -75,7 +92,7 @@ void Solution_64::test() {
 		cin >> A[i];
 
 	// Carl: algorithm
-	mergeSortedArray(A, m, B, n);
+	mergeSortedArray_3(A, m, B, n);
 
 	// Carl: output
 	for (int i = 0; i < m + n; i++)
