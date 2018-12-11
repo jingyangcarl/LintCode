@@ -7,6 +7,26 @@ vector<int> Solution_68::postorderTraversal(TreeNode * root) {
 	return nodes;
 }
 
+vector<int> Solution_68::postorderTraversal_2(TreeNode * root) {
+	// write your code here
+
+	vector<int> nodes;
+	stack<TreeNode> nodeStack;
+	if (root) nodeStack.push(*root);
+	else return nodes;
+
+	while (!nodeStack.empty()) {
+		TreeNode currentNode = nodeStack.top();
+		if (!currentNode.left && !currentNode.right)
+			nodes.push_back(currentNode.val);
+		nodeStack.pop();
+		if (currentNode.right || currentNode.left) nodeStack.push(TreeNode(currentNode.val));
+		if (currentNode.right) nodeStack.push(*currentNode.right);
+		if (currentNode.left) nodeStack.push(*currentNode.left);
+	}
+	return nodes;
+}
+
 void Solution_68::postorderTraversal(TreeNode * root, vector<int>& nodes) {
 	// write your code here
 	if (root) {
@@ -37,7 +57,7 @@ void Solution_68::test() {
 
 	// algorithm
 	vector<int> nodes;
-	nodes = postorderTraversal(tree);
+	nodes = postorderTraversal_2(tree);
 
 	// output
 	vector<int>::iterator iter;
