@@ -13,6 +13,28 @@ vector<int> Solution_66
 	return nodes;
 }
 
+vector<int> Solution_66::preorderTraversal_2(TreeNode * root) {
+	// write your code here
+
+	// Carl:
+	// Idea:
+	// non - recursion
+
+	stack<TreeNode> nodeStack;
+	vector<int> nodes;
+	if (root) nodeStack.push(*root);
+	else return nodes;
+
+	while (!nodeStack.empty()) {
+		TreeNode currentNode = nodeStack.top();
+		nodes.push_back(currentNode.val);
+		nodeStack.pop();
+		if (currentNode.right) nodeStack.push(*currentNode.right);
+		if (currentNode.left) nodeStack.push(*currentNode.left);
+	}
+	return nodes;
+}
+
 void Solution_66::preorderTraversal(TreeNode * root, vector<int> &nodes) {
 	// write your code here
 	if (root) {
@@ -36,14 +58,14 @@ void Solution_66::create(TreeNode * &node) {
 
 void Solution_66::test() {
 	// write your test here
-	
+
 	// input
 	TreeNode *tree = NULL;
 	create(tree);
 
 	// algorithm
 	vector<int> nodes;
-	nodes = preorderTraversal(tree);
+	nodes = preorderTraversal_2(tree);
 
 	// output
 	vector<int>::iterator iter;

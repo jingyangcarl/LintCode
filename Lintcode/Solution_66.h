@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <stack>
 #include <iostream>
 using namespace std;
 
@@ -21,6 +22,7 @@ public:
 	 * @return: Preorder in ArrayList which contains node values.
 	 */
 	vector<int> preorderTraversal(TreeNode * root);
+	vector<int> preorderTraversal_2(TreeNode * root);
 	void preorderTraversal(TreeNode * root, vector<int> &nodes);
 	void create(TreeNode *&node);
 	void test();
