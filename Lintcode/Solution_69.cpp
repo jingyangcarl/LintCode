@@ -8,6 +8,32 @@ vector<vector<int>> Solution_69::levelOrder(TreeNode * root) {
 	return nodes;
 }
 
+vector<vector<int>> Solution_69::levelOrder_2(TreeNode * root) {
+	// write your code here
+
+	// Carl:
+	// Idea:
+	// non-recursion, using queue
+
+	vector<vector<int>> nodes;
+	queue<pair<TreeNode, int>> nodeQueue;
+	if (root) nodeQueue.push(pair<TreeNode, int>(*root, 0));
+	else return nodes;
+
+	while (!nodeQueue.empty()) {
+		TreeNode currentNode = nodeQueue.front().first;
+		int currentlayer = nodeQueue.front().second;
+		if (nodes.size() <= currentlayer)
+			nodes.push_back(vector<int>());
+		nodes.at(currentlayer).push_back(currentNode.val);
+		nodeQueue.pop();
+		if (currentNode.left) nodeQueue.push(pair<TreeNode, int>(*currentNode.left, currentlayer + 1));
+		if (currentNode.right) nodeQueue.push(pair<TreeNode, int>(*currentNode.right, currentlayer + 1));
+	}
+
+	return nodes;
+}
+
 void Solution_69::levelOrder(TreeNode * root, int layer, vector<vector<int>>& nodes) {
 	// write your code here
 	if (root) {
@@ -41,7 +67,7 @@ void Solution_69::test() {
 
 	// algorithm
 	vector<vector<int>> nodes;
-	nodes = levelOrder(tree);
+	nodes = levelOrder_2(tree);
 
 	// output
 	vector<vector<int>>::iterator iter;

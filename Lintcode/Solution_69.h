@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <queue>
 #include <iostream>
 using namespace std;
 
@@ -21,6 +22,7 @@ public:
 	 * @return: Level order a list of lists of integer
 	 */
 	vector<vector<int>> levelOrder(TreeNode * root);
+	vector<vector<int>> levelOrder_2(TreeNode * root);
 	void levelOrder(TreeNode * root, int layer, vector<vector<int>> &nodes);
 	void create(TreeNode * &node);
 	void test();
