@@ -59,6 +59,7 @@
     <ClCompile Include="Solution_69.cpp" />
     <ClCompile Include="Solution_7.cpp" />
     <ClCompile Include="Solution_8.cpp" />
+    <ClCompile Include="Solution_80.cpp" />
     <ClCompile Include="Solution_9.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +105,7 @@
     <ClInclude Include="Solution_69.h" />
     <ClInclude Include="Solution_7.h" />
     <ClInclude Include="Solution_8.h" />
+    <ClInclude Include="Solution_80.h" />
     <ClInclude Include="Solution_9.h" />
   </ItemGroup>
   <ItemGroup>
