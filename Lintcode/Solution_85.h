@@ -13,7 +13,7 @@ public:
 	}
 };
 
-class Solution_82 {
+class Solution_85 {
 public:
 	/*
 	 * @param root: The root of the binary search tree.
@@ -21,4 +21,7 @@ public:
 	 * @return: The root of the new binary search tree.
 	 */
 	TreeNode * insertNode(TreeNode * root, TreeNode * node);
+	void insertNode(TreeNode * &root, TreeNode * node);
+	void create(TreeNode *&node);
+	void test();
 };

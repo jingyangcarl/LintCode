@@ -16,4 +16,6 @@ int Solution_82::singleNumber(vector<int>& A) {
 }
 
 void Solution_82::test() {
+	// write your test here
+
 }
