@@ -63,6 +63,7 @@
     <ClCompile Include="Solution_82.cpp" />
     <ClCompile Include="Solution_85.cpp" />
     <ClCompile Include="Solution_9.cpp" />
+    <ClCompile Include="Solution_93.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -111,6 +112,7 @@
     <ClInclude Include="Solution_82.h" />
     <ClInclude Include="Solution_85.h" />
     <ClInclude Include="Solution_9.h" />
+    <ClInclude Include="Solution_93.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Solution_30.txt" />
