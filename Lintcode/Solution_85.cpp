@@ -44,6 +44,16 @@ void Solution_85::inorderTraversal(TreeNode * root) {
 
 void Solution_85::inorderTraversal_2(TreeNode * root) {
 	// write your code here
+	stack<TreeNode> nodeStack;
+	nodeStack.push(*root);
+	while (!nodeStack.empty()) {
+		TreeNode currentNode = nodeStack.top();
+		if (!currentNode.left && !currentNode.right) cout << currentNode.val << " ";
+		nodeStack.pop();
+		if (currentNode.right) nodeStack.push(*currentNode.right);
+		if (currentNode.right || currentNode.left) nodeStack.push(TreeNode(currentNode.val));
+		if (currentNode.left) nodeStack.push(*currentNode.left);
+	}
 }
 
 void Solution_85::test() {
@@ -60,7 +70,7 @@ void Solution_85::test() {
 	insertNode(tree, node);
 
 	// output
-	inorderTraversal(tree);
+	inorderTraversal_2(tree);
 }
 
 
