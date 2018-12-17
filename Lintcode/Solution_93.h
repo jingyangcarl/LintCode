@@ -13,14 +13,14 @@ public:
 	}
 };
 
-class Solution {
+class Solution_93 {
 public:
 	/**
 	 * @param root: The root of binary tree.
 	 * @return: True if this Binary tree is Balanced, or false.
 	 */
 	bool isBalanced(TreeNode * root);
-	void isBalanced(TreeNode * root, int leftHeight, int rightHeight, bool isBalanced);
+	int depth(TreeNode *root);
 	void create(TreeNode *&node);
 	void inorderTraversal(TreeNode *root);
 	void test();

@@ -1,22 +1,21 @@
 #include "Solution_93.h"
 
-bool Solution::isBalanced(TreeNode * root) {
+bool Solution_93::isBalanced(TreeNode * root) {
 	// write your code here
 	int leftHeight(0), rightHeight(0);
-	bool is(false);
+	bool is(true);
+
+	return is;
 }
 
-void Solution::isBalanced(TreeNode * root, int leftHeight, int rightHeight, bool is) {
-	// write your code here
-	if (root) {
-		if (abs(leftHeight - rightHeight) > 1) is = false;
-		isBalanced(root->left, leftHeight + 1, rightHeight, is);
-		isBalanced(root->right, leftHeight, rightHeight + 1, is);
+int Solution_93::depth(TreeNode * root) {
+	if (!root) return 0;
+	else {
+
 	}
-	else return;
 }
 
-void Solution::create(TreeNode *& node) {
+void Solution_93::create(TreeNode *& node) {
 	int n;
 	cin >> n;
 	if (n != -1) {
@@ -27,7 +26,7 @@ void Solution::create(TreeNode *& node) {
 	else return;
 }
 
-void Solution::inorderTraversal(TreeNode * root) {
+void Solution_93::inorderTraversal(TreeNode * root) {
 	// write your code here
 	if (root) {
 		inorderTraversal(root->left);
@@ -37,18 +36,13 @@ void Solution::inorderTraversal(TreeNode * root) {
 	else return;
 }
 
-void Solution::test() {
+void Solution_93::test() {
 	// write your test here
 
 	// input
 	TreeNode *tree = NULL;
 	create(tree);
-	int n;
-	cin >> n;
-	TreeNode *node = new TreeNode(n);
 
-	// algorithm
-
-	// output
-	inorderTraversal(tree);
+	// algorithm and output
+	cout << isBalanced(tree);
 }
