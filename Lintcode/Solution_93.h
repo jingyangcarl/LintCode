@@ -20,4 +20,8 @@ public:
 	 * @return: True if this Binary tree is Balanced, or false.
 	 */
 	bool isBalanced(TreeNode * root);
+	void isBalanced(TreeNode * root, int leftHeight, int rightHeight, bool isBalanced);
+	void create(TreeNode *&node);
+	void inorderTraversal(TreeNode *root);
+	void test();
 };
