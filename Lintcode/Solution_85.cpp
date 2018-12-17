@@ -17,8 +17,28 @@ TreeNode * Solution_85::insertNode_2(TreeNode * root, TreeNode * node) {
 	// Idea: 
 	// non recursion
 
+	TreeNode *current(root), *parent(root);
 
-	return nullptr;
+	if (!current) {
+		root = new TreeNode(node->val);
+		return root;
+	}
+	while (current) {
+		parent = current;
+		if (node->val < current->val) {
+			current = current->left; 
+			continue;
+		}
+		if (node->val > current->val) {
+			current = current->right; 
+			continue;
+		}
+	}
+
+	if (node->val < parent->val) parent->left = new TreeNode(node->val);
+	if (node->val > parent->val) parent->right = new TreeNode(node->val);
+
+	return root;
 }
 
 void Solution_85::insertNode(TreeNode * &root, int node) {
@@ -78,7 +98,7 @@ void Solution_85::test() {
 	TreeNode *node = new TreeNode(n);
 
 	// algorithm
-	insertNode(tree, node);
+	insertNode_2(tree, node);
 
 	// output
 	inorderTraversal_2(tree);
