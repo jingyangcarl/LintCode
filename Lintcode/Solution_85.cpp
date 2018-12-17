@@ -10,6 +10,17 @@ TreeNode * Solution_85::insertNode(TreeNode * root, TreeNode * node) {
 	return root;
 }
 
+TreeNode * Solution_85::insertNode_2(TreeNode * root, TreeNode * node) {
+	// write your code here
+
+	// Carl: 
+	// Idea: 
+	// non recursion
+
+
+	return nullptr;
+}
+
 void Solution_85::insertNode(TreeNode * &root, int node) {
 	// write your code here
 

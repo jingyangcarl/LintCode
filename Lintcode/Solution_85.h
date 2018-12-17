@@ -22,6 +22,7 @@ public:
 	 * @return: The root of the new binary search tree.
 	 */
 	TreeNode * insertNode(TreeNode * root, TreeNode * node);
+	TreeNode * insertNode_2(TreeNode * root, TreeNode * node);
 	void insertNode(TreeNode * &root, int node);
 	void create(TreeNode *&node);
 	void inorderTraversal(TreeNode *root);
