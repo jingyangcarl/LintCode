@@ -6,7 +6,7 @@ int Solution_44::minSubArray(vector<int>& nums) {
 	// Carl:
 	// Idea:
 	// the idea is the same as Solution_41, which is maxSubArray();
-	// for details, see Solution 41. Maximum Subarray
+	// for details, see Solution_41. Maximum Subarray
 	// Pseudocode:
 	// do the sum while in the iteration
 	// if the sum < 0, continue summing

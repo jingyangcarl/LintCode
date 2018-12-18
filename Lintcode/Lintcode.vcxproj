@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Solution_1.cpp" />
+    <ClCompile Include="Solution_100.cpp" />
     <ClCompile Include="Solution_11.cpp" />
     <ClCompile Include="Solution_12.cpp" />
     <ClCompile Include="Solution_13.cpp" />
@@ -71,6 +72,7 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Solution_100.h" />
     <ClInclude Include="Solution_32.h" />
     <ClInclude Include="Solution_1.h" />
     <ClInclude Include="Solution_11.h" />
@@ -119,6 +121,7 @@
     <ClInclude Include="Solution_97.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Solution_100.txt" />
     <Text Include="Solution_30.txt" />
     <Text Include="Solution_35.txt" />
     <Text Include="Solution_39.txt" />
