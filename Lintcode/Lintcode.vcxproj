@@ -64,6 +64,7 @@
     <ClCompile Include="Solution_85.cpp" />
     <ClCompile Include="Solution_9.cpp" />
     <ClCompile Include="Solution_93.cpp" />
+    <ClCompile Include="Solution_96.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -113,6 +114,7 @@
     <ClInclude Include="Solution_85.h" />
     <ClInclude Include="Solution_9.h" />
     <ClInclude Include="Solution_93.h" />
+    <ClInclude Include="Solution_96.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Solution_30.txt" />
@@ -132,6 +134,7 @@
     <Text Include="Solution_69.txt" />
     <Text Include="Solution_85.txt" />
     <Text Include="Solution_93.txt" />
+    <Text Include="Solution_96.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
