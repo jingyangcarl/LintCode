@@ -1,7 +1,6 @@
 #include "Solution_66.h"
 
-vector<int> Solution_66
-::preorderTraversal(TreeNode * root) {
+vector<int> Solution_66::preorderTraversal(TreeNode * root) {
 	// write your code here
 
 	// Carl:
