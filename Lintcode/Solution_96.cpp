@@ -7,7 +7,7 @@ ListNode * Solution_96::partition(ListNode * head, int x) {
 	// Idea:
 	// do a loop and pick up the nodes larger or equal than the given value into a queue
 	// with other nodes remaining order unchanged and saving in another queue
-	
+
 	ListNode *iter(head);
 	queue<ListNode> smaller, larger;
 	while (iter) {
@@ -37,16 +37,31 @@ ListNode * Solution_96::partition(ListNode * head, int x) {
 ListNode * Solution_96::partition_2(ListNode * head, int x) {
 	// write your code here
 
-	// Carl: 
-	// Idea: 
+	// Carl:
+	// Idea:
 	// the same idea but without queue
 
-	ListNode *newList = new ListNode(0);
-	newList->next = head;
-	ListNode *previous(newList), *current(newList->next);
+	ListNode *headedList = new ListNode(0), *pickupedList = new ListNode(0);
+	headedList->next = head;
+	ListNode *previous(headedList), *current(headedList->next), *pickups(pickupedList);
 	while (current) {
-
+		if (current->val >= x) {
+			// remove the current node from headedList
+			previous->next = current->next;
+			// add the current node into pickupedList
+			current->next = NULL;
+			pickups->next = current;
+			pickups = pickups->next;
+			// relocate the current node
+			current = previous->next;
+		}
+		else {
+			current = current->next;
+			previous = previous->next;
+		}
 	}
+	previous->next = pickupedList->next;
+	return headedList->next;
 }
 
 void Solution_96::create(ListNode * &head) {
@@ -71,7 +86,7 @@ void Solution_96::test() {
 	// algorithm
 	int n;
 	cin >> n;
-	head = partition(head, n);
+	head = partition_2(head, n);
 
 	// output
 	while (head) {
