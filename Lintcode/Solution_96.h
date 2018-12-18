@@ -22,6 +22,7 @@ public:
 	 * @return: A ListNode
 	 */
 	ListNode * partition(ListNode * head, int x);
+	ListNode * partition_2(ListNode * head, int x);
 	void create(ListNode * &head);
 	void test();
 

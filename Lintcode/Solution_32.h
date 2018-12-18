@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-class Solution {
+class Solution_32 {
 public:
 	/**
 	 * @param source : A string

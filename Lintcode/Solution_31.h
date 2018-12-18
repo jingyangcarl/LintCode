@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-class Solution {
+class Solution_31 {
 public:
 	/**
 	 * @param nums: The integer array you should partition

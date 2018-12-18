@@ -34,6 +34,21 @@ ListNode * Solution_96::partition(ListNode * head, int x) {
 	return newList->next;
 }
 
+ListNode * Solution_96::partition_2(ListNode * head, int x) {
+	// write your code here
+
+	// Carl: 
+	// Idea: 
+	// the same idea but without queue
+
+	ListNode *newList = new ListNode(0);
+	newList->next = head;
+	ListNode *previous(newList), *current(newList->next);
+	while (current) {
+
+	}
+}
+
 void Solution_96::create(ListNode * &head) {
 	int n;
 	cin >> n;
