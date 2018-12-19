@@ -78,6 +78,10 @@ int Solution_110::minPathSum(vector<vector<int>>& grid, int row, int col) {
 int Solution_110::minPathSum(vector<vector<int>>& grid, vector<vector<int>>& stored, int row, int col) {
 	// write your code here
 
+	// Carl: 
+	// Idea: 
+	// Memory Search
+
 	if (stored.at(row).at(col) != -1)
 		return stored.at(row).at(col);
 	else {
