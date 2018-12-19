@@ -3,8 +3,6 @@
 int Solution_110::minPathSum(vector<vector<int>>& grid) {
 	// write your code here
 	// try dynamic programming
-	// try divide and conquer
-	// try back tracking
 
 	// Carl:
 	// Idea:
@@ -26,6 +24,34 @@ int Solution_110::minPathSum_2(vector<vector<int>>& grid) {
 	}
 
 	return minPathSum(grid, stored, 0, 0);
+}
+
+int Solution_110::minPathSum_3(vector<vector<int>>& grid) {
+	// write your code here
+
+	// Carl:
+	// Idea: 
+	// do dynamic programming
+	// basically the idea is the same as minPathSum_2, which is using another table to store all the minimum values
+	// based on the element dependency, the calculation should start from the last element
+	
+	vector<vector<int>> dp(grid);
+	int rows = dp.size();
+	int cols = dp.at(0).size();
+	// fill the last row
+	for (int i = cols - 2; i >= 0; i--)
+		dp[rows - 1][i] += dp[rows - 1][i + 1];
+	// fill the last column
+	for (int i = rows - 2; i >= 0; i--)
+		dp[i][cols - 1] += dp[i + 1][cols - 1];
+	// fill the other elements
+	for (int i = rows - 2; i >= 0; i--) {
+		for (int j = cols - 2; j >= 0; j--) {
+			dp[i][j] += min(dp[i + 1][j], dp[i][j + 1]);
+		}
+	}
+	// return the first element
+	return dp[0][0];
 }
 
 int Solution_110::minPathSum(vector<vector<int>>& grid, int row, int col) {
@@ -116,5 +142,5 @@ void Solution_110::test() {
 	}
 
 	// algorithm and output
-	cout << minPathSum_2(grid);
+	cout << minPathSum_3(grid);
 }
