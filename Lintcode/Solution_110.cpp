@@ -4,6 +4,7 @@ int Solution_110::minPathSum(vector<vector<int>>& grid) {
 	// write your code here
 	// try dynamic programming
 	// try divide and conquer
+	// try back tracking
 	return 0;
 }
 
