@@ -146,6 +146,12 @@ int Solution_41::maxSubArray_3(vector<int>& nums) {
 	return sum;
 }
 
+int Solution_41::maxSubArray_4(vector<int>& nums) {
+	// write your code here
+	// Carl: try divide and conquer
+	return 0;
+}
+
 void Solution_41::test() {
 	// write your test here
 

@@ -12,5 +12,6 @@ public:
 	int maxSubArray(vector<int> &nums);
 	int maxSubArray_2(vector<int> &nums);
 	int maxSubArray_3(vector<int> &nums);
+	int maxSubArray_4(vector<int> &nums);
 	void test();
 };
