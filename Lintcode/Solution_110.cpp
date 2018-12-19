@@ -6,10 +6,26 @@ int Solution_110::minPathSum(vector<vector<int>>& grid) {
 	// try divide and conquer
 	// try back tracking
 
-	// Carl: 
-	// Idea: 
+	// Carl:
+	// Idea:
 	// do recursion
 	return minPathSum(grid, 0, 0);
+}
+
+int Solution_110::minPathSum_2(vector<vector<int>>& grid) {
+	// Carl:
+	// Idea:
+	// the recursion in minPathSum(vector<vector<int>>) will cost a lot of time
+	// however, there is redundent recursion, which should be stored to save time
+	vector<vector<int>> stored;
+	for (vector<vector<int>>::iterator iterI = grid.begin(); iterI != grid.end(); iterI++) {
+		vector<int> rows;
+		for (vector<int>::iterator iterJ = (*iterI).begin(); iterJ != (*iterI).end(); iterJ++)
+			rows.push_back(-1);
+		stored.push_back(rows);
+	}
+
+	return minPathSum(grid, stored, 0, 0);
 }
 
 int Solution_110::minPathSum(vector<vector<int>>& grid, int row, int col) {
@@ -19,7 +35,7 @@ int Solution_110::minPathSum(vector<vector<int>>& grid, int row, int col) {
 	// Idea:
 	// let's say the matrix is three by three with the follwing elements
 	// 1 3 1
-	// 1 5 1 
+	// 1 5 1
 	// 4 2 1
 	// start from the very first element, which is 1 on the top left corner;
 	// there are only two ways that will lead to the bottom right
@@ -59,6 +75,24 @@ int Solution_110::minPathSum(vector<vector<int>>& grid, int row, int col) {
 		return grid.at(row).at(col) + min(minPathSum(grid, row, col + 1), minPathSum(grid, row + 1, col));
 }
 
+int Solution_110::minPathSum(vector<vector<int>>& grid, vector<vector<int>>& stored, int row, int col) {
+	// write your code here
+
+	if (stored.at(row).at(col) != -1)
+		return stored.at(row).at(col);
+	else {
+		if (row == grid.size() - 1 && col == grid.at(0).size() - 1)
+			return grid.at(row).at(col);
+		else if (row == grid.size() - 1)
+			stored.at(row).at(col) = grid.at(row).at(col) + minPathSum(grid, stored, row, col + 1);
+		else if (col == grid.at(0).size() - 1)
+			stored.at(row).at(col) = grid.at(row).at(col) + minPathSum(grid, stored, row + 1, col);
+		else
+			stored.at(row).at(col) = grid.at(row).at(col) + min(minPathSum(grid, stored, row, col + 1), minPathSum(grid, stored, row + 1, col));
+		return stored.at(row).at(col);
+	}
+}
+
 void Solution_110::test() {
 	// write your code here
 
@@ -78,5 +112,5 @@ void Solution_110::test() {
 	}
 
 	// algorithm and output
-	cout << minPathSum(grid);
+	cout << minPathSum_2(grid);
 }

@@ -9,5 +9,6 @@ int main() {
 
 	getchar();
 	getchar();
+	getchar();
 
 }
