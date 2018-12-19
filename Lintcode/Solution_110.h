@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 class Solution_110 {
@@ -10,5 +11,6 @@ public:
 	 * @return: An integer, minimizes the sum of all numbers along its path
 	 */
 	int minPathSum(vector<vector<int>> &grid);
+	int minPathSum(vector<vector<int>> &grid, int row, int col);
 	void test();
 };

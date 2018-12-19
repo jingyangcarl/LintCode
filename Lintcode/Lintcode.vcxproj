@@ -127,6 +127,7 @@
   <ItemGroup>
     <Text Include="Solution_100.txt" />
     <Text Include="Solution_101.txt" />
+    <Text Include="Solution_110.txt" />
     <Text Include="Solution_30.txt" />
     <Text Include="Solution_35.txt" />
     <Text Include="Solution_39.txt" />
