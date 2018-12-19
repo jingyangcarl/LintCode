@@ -24,6 +24,7 @@
     <ClCompile Include="Solution_100.cpp" />
     <ClCompile Include="Solution_101.cpp" />
     <ClCompile Include="Solution_11.cpp" />
+    <ClCompile Include="Solution_110.cpp" />
     <ClCompile Include="Solution_12.cpp" />
     <ClCompile Include="Solution_13.cpp" />
     <ClCompile Include="Solution_14.cpp" />
@@ -75,6 +76,7 @@
   <ItemGroup>
     <ClInclude Include="Solution_100.h" />
     <ClInclude Include="Solution_101.h" />
+    <ClInclude Include="Solution_110.h" />
     <ClInclude Include="Solution_32.h" />
     <ClInclude Include="Solution_1.h" />
     <ClInclude Include="Solution_11.h" />
