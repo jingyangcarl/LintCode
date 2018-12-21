@@ -11,6 +11,7 @@ int Solution_111::climbStairs_2(int n) {
 	// write your code here
 	// Carl:
 	// Idea: Fibonacci sequence
+	// which is basically dynamic programming
 	vector<int> dp(n+1, 1);
 	for (int i = 2; i < n + 1; i++)
 		dp[i] = dp[i - 1] + dp[i - 2];
