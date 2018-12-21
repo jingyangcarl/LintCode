@@ -7,6 +7,17 @@ int Solution_111::climbStairs(int n) {
 	return ways;
 }
 
+int Solution_111::climbStairs_2(int n) {
+	// write your code here
+	// Carl:
+	// Idea: Fibonacci sequence
+	vector<int> dp(n+1, 1);
+	for (int i = 2; i < n + 1; i++)
+		dp[i] = dp[i - 1] + dp[i - 2];
+	dp[0] = 0;
+	return dp[n];
+}
+
 int Solution_111::climbStairs(int n, int accumulation, int &ways) {
 	// write your code here
 	if (n != 0 && accumulation == n) ways++;
@@ -22,5 +33,5 @@ void Solution_111::test() {
 	// input;
 	int n;
 	cin >> n;
-	cout << climbStairs(n);
+	cout << climbStairs_2(n);
 }
