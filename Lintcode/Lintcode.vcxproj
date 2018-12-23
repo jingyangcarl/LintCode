@@ -27,6 +27,7 @@
     <ClCompile Include="Solution_110.cpp" />
     <ClCompile Include="Solution_111.cpp" />
     <ClCompile Include="Solution_112.cpp" />
+    <ClCompile Include="Solution_114.cpp" />
     <ClCompile Include="Solution_12.cpp" />
     <ClCompile Include="Solution_13.cpp" />
     <ClCompile Include="Solution_14.cpp" />
