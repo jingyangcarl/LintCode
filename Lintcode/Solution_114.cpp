@@ -8,12 +8,12 @@ int Solution_114::uniquePaths(int m, int n) {
 }
 
 void Solution_114::uniquePaths(int m, int n, int curM, int curN, int &paths) {
-	if (curM == m && curN == n) paths++;
-	else if (curM <= m && curN <= n){
+	if (curM == m - 1 && curN == n - 1) paths++;
+	else if (curM <= m - 1 && curN <= n - 1) {
 		uniquePaths(m, n, curM + 1, curN, paths);
 		uniquePaths(m, n, curM, curN + 1, paths);
 	}
-	else if (curM > m || curN > n) return;
+	else if (curM > m - 1 || curN > n - 1) return;
 }
 
 void Solution_114::test() {
