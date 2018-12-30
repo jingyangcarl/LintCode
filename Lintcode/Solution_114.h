@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class Solution_114 {
@@ -10,6 +11,7 @@ public:
 	 * @return: An integer
 	 */
 	int uniquePaths(int m, int n);
+	int uniquePaths_2(int m, int n);
 	void uniquePaths(int m, int n, int curM, int curN, int &paths);
 	void test();
 };
