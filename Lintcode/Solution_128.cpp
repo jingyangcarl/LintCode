@@ -3,16 +3,24 @@
 int Solution_128::hashCode(string & key, int HASH_SIZE) {
 	// write your code here
 
-	int magic(33);
-	int sum(0);
-	
-	for (int i = 0; i < key.size(); i++) {
-		int currentChar = (int)key[i];
-		int currentFactor(1);
-		for (int j = key.size() - i - 1; j > 0; j--) currentFactor *= magic;
-		sum += currentFactor * currentChar;
-	}
+	long long sum(0);
+	vector<long long> factor(key.size(), 1);
+
+	for (int i = 0; i < key.size(); i++)
+		factor[i] = pow(33, i);
+
+	for (int i = 0; i < key.size(); i++)
+		sum += factor[i] * (int)key[-i + key.size() - 1];
+
 	return sum % HASH_SIZE;
+
+	// ERROR: "abcdefghijklmnopqrstuvwxyz"
+	// 2607
+	// which is because the overflow
+}
+
+int Solution_128::hashCode_2(string & key, int HASH_SIZE) {
+	return 0;
 }
 
 void Solution_128::test() {
