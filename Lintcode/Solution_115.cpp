@@ -3,28 +3,30 @@
 int Solution_115::uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
 	// write your code here
 
-	// Carl: 
+	// Carl:
 	// Idea:
 	// do the dynamic programming
 	// when the double loop starts, change all the 1 into 0 and do the sum;
-	
+
 	// initialization
-	// the last element should be 0
 	int m = obstacleGrid.size();
 	int n = obstacleGrid[0].size();
 	bool obstacle(false);
+	// detection on last entry
+	if (obstacleGrid[m - 1][n - 1] == 1) return 0;
+	// the last element should be 1
 	obstacleGrid[m - 1][n - 1] = 1;
 	// the last row should all be set to 1
 	obstacle = false;
-	for (int i = 0; i < n - 1; i++) {
-		if (obstacleGrid[m - 1][i] == 1) obstacle = true;
+	for (int i = n - 2; i >= 0; i--) {
+		if (!obstacle && obstacleGrid[m - 1][i] == 1) obstacle = true;
 		obstacleGrid[m - 1][i] = obstacle ? 0 : 1;
 	}
 	// the last col should all be set to 1
 	obstacle = false;
-	for (int i = 0; i < m - 1; i++) {
-		if (obstacleGrid[i][n - 1] == 1) obstacle = true;
-		obstacleGrid[m - 1][i] = obstacle ? 0 : 1;
+	for (int i = m - 2; i >= 0; i--) {
+		if (!obstacle && obstacleGrid[i][n - 1] == 1) obstacle = true;
+		obstacleGrid[i][n - 1] = obstacle ? 0 : 1;
 	}
 
 	// count the other elements
