@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-class Solution {
+class Solution_115 {
 public:
 	/**
 	 * @param obstacleGrid: A list of lists of integers
