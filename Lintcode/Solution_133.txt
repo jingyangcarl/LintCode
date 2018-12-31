@@ -1,0 +1,12 @@
+5
+dog
+google
+facebook
+internationalization
+blabla
+
+4
+like
+love
+hate
+yes
