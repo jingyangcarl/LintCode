@@ -50,12 +50,11 @@ vector<int> Solution_138::subarraySum_2(vector<int>& nums) {
 			if (iter != sums.end()) {
 				index[0] = (*iter).second+1;
 				index[1] = i;
+				return index;
 			}
 			sums.insert(pair<int, int>(sum, i));
 		}
 	}
-
-	return index;
 }
 
 void Solution_138::test() {
