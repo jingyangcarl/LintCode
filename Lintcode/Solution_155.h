@@ -13,14 +13,14 @@ class TreeNode {
 		}
 };
 
-class Solution {
+class Solution_155 {
 public:
 	/**
 	 * @param root: The root of binary tree
 	 * @return: An integer
 	 */
 	int minDepth(TreeNode * root);
-	void create(TreeNode * root);
-	void test();
+	void minDepth(TreeNode * root, int currDep, int &minDep);
+	void create(TreeNode * &root);
 	void test();
 };
