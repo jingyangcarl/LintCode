@@ -57,6 +57,32 @@ vector<int> Solution_138::subarraySum_2(vector<int>& nums) {
 	}
 }
 
+vector<int> Solution_138::subarraySum_3(vector<int>& nums) {
+	// write your code here
+
+	// try hash map rather than Red Black Tree
+	unordered_map<int, int> sums; // index, sum
+	vector<int> index(2, 0);
+	nums.push_back(1);
+	int sum(0);
+	for (int i = 0; i < nums.size(); i++) {
+		sum += nums.at(i);
+		if (!sum) {
+			index[1] = i;
+			return index;
+		}
+		else {
+			unordered_map<int, int>::iterator iter = sums.find(sum);
+			if (iter != sums.end()) {
+				index[0] = (*iter).second + 1;
+				index[1] = i;
+				return index;
+			}
+			sums.insert(pair<int, int>(sum, i));
+		}
+	}
+}
+
 void Solution_138::test() {
 	// write your test here
 

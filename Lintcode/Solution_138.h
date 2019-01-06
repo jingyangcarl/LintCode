@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <map>
+#include <unordered_map>
 #include <vector>
 using namespace std;
 
@@ -12,5 +13,6 @@ public:
 	 */
 	vector<int> subarraySum(vector<int> &nums);
 	vector<int> subarraySum_2(vector<int> &nums);
+	vector<int> subarraySum_3(vector<int> &nums);
 	void test();
 };
