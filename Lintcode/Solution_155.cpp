@@ -4,14 +4,27 @@ int Solution_155::minDepth(TreeNode * root) {
 	// write your code here
 
 	int curDep(0), minDep(INT_MAX);
-	minDepth(root, curDep, minDep);
+	if (!root) minDep = 0;
+	else minDepth(root, curDep + 1, minDep);
 	return minDep;
+}
+
+int Solution_155::minDepth_2(TreeNode * root) {
+	// write your code here
+
+	// Carl: try non-recursion
+
+
+	return 0;
 }
 
 void Solution_155::minDepth(TreeNode * root, int curDep, int &minDep) {
 	// write your code here
+	
 	if (!root) {
-		// if this is a leaf node, do the comparison
+		return;
+	}
+	else if (!root->right && !root->left) {
 		minDep = curDep < minDep ? curDep : minDep;
 	}
 	else {

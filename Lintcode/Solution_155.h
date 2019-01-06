@@ -20,6 +20,7 @@ public:
 	 * @return: An integer
 	 */
 	int minDepth(TreeNode * root);
+	int minDepth_2(TreeNode * root);
 	void minDepth(TreeNode * root, int currDep, int &minDep);
 	void create(TreeNode * &root);
 	void test();
