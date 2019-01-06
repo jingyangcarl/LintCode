@@ -9,7 +9,12 @@ int Solution_141::sqrt(int x) {
 }
 
 int Solution_141::sqrt_2(int x) {
-	return 0;
+	// write your code here
+	
+	// Carl:
+	// Idea: binary search
+	long long l(0), r(x / 2), mid;
+	
 }
 
 void Solution_141::test() {
