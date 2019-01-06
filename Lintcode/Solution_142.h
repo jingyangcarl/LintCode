@@ -9,5 +9,6 @@ public:
 	 * @return: True or false
 	 */
 	bool checkPowerOf2(int n);
+	bool checkPowerOf2_2(int n);
 	void test();
 };
