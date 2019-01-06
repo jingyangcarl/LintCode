@@ -1,11 +1,17 @@
 #include "Solution_142.h"
 
-bool Solution::checkPowerOf2(int n) {
+bool Solution_142::checkPowerOf2(int n) {
 	// write your code here
-	return false;
+
+	while (n > 1) {
+		if (n % 2 == 1) return false;
+		n /= 2;
+	}
+	if (n == 1) return true;
+	else return false;
 }
 
-void Solution::test() {
+void Solution_142::test() {
 	// write your test here
 
 	// input;
@@ -13,5 +19,5 @@ void Solution::test() {
 	cin >> n;
 
 	// algorithm and output
-
+	cout << checkPowerOf2(n);
 }

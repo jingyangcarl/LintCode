@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-class Solution {
+class Solution_142 {
 public:
 	/**
 	 * @param n: An integer
