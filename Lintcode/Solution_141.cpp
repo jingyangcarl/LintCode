@@ -14,7 +14,14 @@ int Solution_141::sqrt_2(int x) {
 	// Carl:
 	// Idea: binary search
 	long long l(0), r(x / 2), mid;
-	
+	while (l <= r) {
+		mid = (l + r) / 2;
+		long long sqrMid = mid * mid;
+		long long sqrMid_ = (mid + 1)*(mid + 1);
+		if (sqrMid <= x && sqrMid_ > x) return mid;
+		else if (sqrMid_ <= x) l = mid + 1;
+		else if (sqrMid > x) r = mid;
+	}
 }
 
 void Solution_141::test() {
@@ -25,5 +32,5 @@ void Solution_141::test() {
 	cin >> x;
 
 	// algorithm and out
-	cout << sqrt(x);
+	cout << sqrt_2(x);
 }
