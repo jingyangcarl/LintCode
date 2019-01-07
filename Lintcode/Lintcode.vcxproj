@@ -174,6 +174,7 @@
     <Text Include="Solution_93.txt" />
     <Text Include="Solution_96.txt" />
     <Text Include="Solution_155.txt" />
+    <Text Include="Text.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

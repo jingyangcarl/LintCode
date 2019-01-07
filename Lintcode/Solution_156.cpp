@@ -8,6 +8,7 @@ vector<Interval> Solution_156::merge(vector<Interval>& intervals) {
 	if (iter != intervals.end()) {
 		intervalVector.push_back((*iter).start);
 		intervalVector.push_back((*iter).end);
+		iter++;
 	}
 	else {
 		return intervals;
@@ -52,4 +53,31 @@ vector<Interval> Solution_156::merge(vector<Interval>& intervals) {
 	}
 
 	return result;
+	
+	// ERROR:
+	// 1 4 0 2 3 5
+}
+
+void Solution_156::test() {
+	// write your test here
+
+	// intput
+	int n;
+	cin >> n;
+	vector<Interval> input;
+	for (int i = 0; i < n; i++) {
+		int start, end;
+		cin >> start >> end;
+		Interval element(start, end);
+		input.push_back(element);
+	}
+
+	// algorithm
+	vector<Interval> output;
+	output = merge(input);
+
+	// output;
+	for (int i = 0; i < output.size(); i++) {
+		cout << output.at(i).start << ' ' << output.at(i).end << ' ';
+	}
 }

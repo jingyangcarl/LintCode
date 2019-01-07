@@ -22,4 +22,5 @@ public:
 	 * @return: A new interval list.
 	 */
 	vector<Interval> merge(vector<Interval> &intervals);
+	void test();
 };
