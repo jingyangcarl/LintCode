@@ -13,7 +13,13 @@ int Solution_155::minDepth_2(TreeNode * root) {
 	// write your code here
 
 	// Carl: try non-recursion
+	stack<TreeNode> nodeStack;
+	nodeStack.push(*root);
+	while (!nodeStack.empty()) {
+		TreeNode currentNode = nodeStack.top();
+		if (currentNode.left) nodeStack.push(*currentNode.left);
 
+	}
 
 	return 0;
 }
