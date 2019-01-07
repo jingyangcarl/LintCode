@@ -22,5 +22,6 @@ public:
 	 * @return: A new interval list.
 	 */
 	vector<Interval> merge(vector<Interval> &intervals);
+	static bool cmp(const Interval& x, const Interval& y);
 	void test();
 };

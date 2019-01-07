@@ -3,6 +3,9 @@
 vector<Interval> Solution_156::merge(vector<Interval>& intervals) {
 	// write your code here
 
+	// sort first
+	sort(intervals.begin(), intervals.end(), cmp);
+
 	vector<int> intervalVector;
 	vector<Interval>::iterator iter = intervals.begin();
 	if (iter != intervals.end()) {
@@ -33,12 +36,8 @@ vector<Interval> Solution_156::merge(vector<Interval>& intervals) {
 			intervalVector.pop_back();
 			intervalVector.push_back(curEnd);
 		}
-		else if (curEnd == intervalVector.back()) {
+		else if (curEnd <= intervalVector.back()) {
 			// curStart < top = curEnd
-			// do nothing
-		}
-		else if (curEnd < intervalVector.back()) {
-			// curStart < curEnd < top
 			// do nothing
 		}
 		else {
@@ -53,9 +52,10 @@ vector<Interval> Solution_156::merge(vector<Interval>& intervals) {
 	}
 
 	return result;
-	
-	// ERROR:
-	// 1 4 0 2 3 5
+}
+
+bool Solution_156::cmp(const Interval & x, const Interval & y) {
+	return x.start < y.start;
 }
 
 void Solution_156::test() {
