@@ -19,6 +19,11 @@ bool Solution_158::anagram(string & s, string & t) {
 }
 
 bool Solution_158::anagram_2(string & s, string & t) {
+	// write your code here
+
+	// Idea:
+	// doing the sum, even if there is a possibility that the strings are different with same ASCII sum (e.g.: "az" and "by")
+	// the way of decreasing the possibility is doing the sqare
 
 	int sSum(0), tSum(0);
 
