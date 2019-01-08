@@ -21,4 +21,5 @@ public:
 	 * @return: ListNode head of linked list
 	 */
 	ListNode * mergeTwoLists(ListNode * l1, ListNode * l2);
+	void test();
 };
