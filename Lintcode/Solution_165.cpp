@@ -22,7 +22,7 @@ ListNode * Solution_165::mergeTwoLists(ListNode * l1, ListNode * l2) {
 	if (!p1) l3->next = p2;
 	if (!p2) l3->next = p1;
 
-	return p3;
+	return p3->next;
 }
 
 void Solution_165::test() {
@@ -40,14 +40,18 @@ void Solution_165::test() {
 		int num;
 		cin >> num;
 		p->next = new ListNode(num);
+		p = p->next;
 	}
+	l1 = l1->next;
 	cin >> n;
 	p = l2;
 	for (int i = 0; i < n; i++) {
 		int num;
 		cin >> num;
 		p->next = new ListNode(num);
+		p = p->next;
 	}
+	l2 = l2->next;
 
 	// algorithm
 	l3 = mergeTwoLists(l1, l2);
