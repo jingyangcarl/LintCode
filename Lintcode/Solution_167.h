@@ -14,7 +14,7 @@ public:
 	}
 };
 
-class Solution {
+class Solution_167 {
 public:
 	/**
 	 * @param l1: the first list

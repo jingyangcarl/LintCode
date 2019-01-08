@@ -1,6 +1,6 @@
 #include "Solution_167.h"
 
-ListNode * Solution::addLists(ListNode * l1, ListNode * l2) {
+ListNode * Solution_167::addLists(ListNode * l1, ListNode * l2) {
 	// write your code here
 
 	long long num1(0), num2(0), sum(0);
@@ -33,15 +33,18 @@ ListNode * Solution::addLists(ListNode * l1, ListNode * l2) {
 
 	ListNode *result = new ListNode(0);
 	p = result;
+	if (sum == 0) return result;
 	while (sum != 0) {
 		int digit = sum % 10;
 		sum /= 10;
 		p->next = new ListNode(digit);
 		p = p->next;
 	}
+
+	return result->next;
 }
 
-void Solution::test() {
+void Solution_167::test() {
 	// write your test here
 
 	// input
