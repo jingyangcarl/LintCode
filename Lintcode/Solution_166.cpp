@@ -3,7 +3,7 @@
 ListNode * Solution_166::nthToLast(ListNode * head, int n) {
 	// write your code here
 
-	vector<ListNode> nodeVector;
+	static vector<ListNode> nodeVector;
 	ListNode *p(head);
 	while (p) {
 		nodeVector.push_back(*p);
