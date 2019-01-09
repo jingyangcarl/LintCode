@@ -50,31 +50,37 @@ ListNode * Solution_167::addLists_2(ListNode * l1, ListNode * l2) {
 	// write your code here
 
 	ListNode *l3 = new ListNode(0);
-	ListNode *p1(l1), *p2(l2), *p3(l3);
+	ListNode *p1(l1), *p2(l2), *p3(l3), *parent(l3);
 	bool carry(false);
 
 	while (p1 && p2) {
-		p3->next = new ListNode(p1->val + p2->val + carry ? 1 : 0);
+		p3->next = new ListNode(p1->val + p2->val + (carry ? 1 : 0));
 		p1 = p1->next;
 		p2 = p2->next;
+		parent = l3;
 		p3 = p3->next;
 		if (p3->val >= 10) {
 			carry = true;
-			p3->val /= 10;
+			p3->val %= 10;
 		}
 		else carry = false;
 	}
-	if (p1) p3->next = p2;
-	if (p2) p3->next = p1;
+	if (!p1) p3->next = p2;
+	if (!p2) p3->next = p1;
+	parent = p3;
 	p3 = p3->next;
 	while (p3) {
 		p3->val += carry ? 1 : 0;
 		if (p3->val >= 10) {
 			carry = true;
-			p3->val /= 10;
+			p3->val %= 10;
 		}
 		else carry = false;
+		parent = p3;
+		p3 = p3->next;
 	}
+
+	if (carry) parent->next = new ListNode(1);
 
 	return l3->next;
 }
