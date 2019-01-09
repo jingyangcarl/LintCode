@@ -42,6 +42,41 @@ ListNode * Solution_167::addLists(ListNode * l1, ListNode * l2) {
 	}
 
 	return result->next;
+
+	// ERROR: cannot deal with really large number
+}
+
+ListNode * Solution_167::addLists_2(ListNode * l1, ListNode * l2) {
+	// write your code here
+
+	ListNode *l3 = new ListNode(0);
+	ListNode *p1(l1), *p2(l2), *p3(l3);
+	bool carry(false);
+
+	while (p1 && p2) {
+		p3->next = new ListNode(p1->val + p2->val + carry ? 1 : 0);
+		p1 = p1->next;
+		p2 = p2->next;
+		p3 = p3->next;
+		if (p3->val >= 10) {
+			carry = true;
+			p3->val /= 10;
+		}
+		else carry = false;
+	}
+	if (p1) p3->next = p2;
+	if (p2) p3->next = p1;
+	p3 = p3->next;
+	while (p3) {
+		p3->val += carry ? 1 : 0;
+		if (p3->val >= 10) {
+			carry = true;
+			p3->val /= 10;
+		}
+		else carry = false;
+	}
+
+	return l3->next;
 }
 
 void Solution_167::test() {
@@ -72,7 +107,7 @@ void Solution_167::test() {
 	l2 = l2->next;
 
 	// algorithm
-	ListNode *l3 = addLists(l1, l2);
+	ListNode *l3 = addLists_2(l1, l2);
 
 	// output
 	p = l3;

@@ -22,5 +22,6 @@ public:
 	 * @return: the sum list of l1 and l2
 	 */
 	ListNode * addLists(ListNode * l1, ListNode * l2);
+	ListNode * addLists_2(ListNode * l1, ListNode * l2);
 	void test();
 };
