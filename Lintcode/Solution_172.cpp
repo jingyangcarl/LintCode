@@ -33,6 +33,23 @@ int Solution_172::removeElement_2(vector<int>& A, int elem) {
 	return A.size();
 }
 
+int Solution_172::removeElement_3(vector<int>& A, int elem) {
+	// write your code here
+	// IDEA:
+	// double pointers namely i as well as j
+	// i is used for iteration
+	// j is used for recording values != elem
+
+	int j(0);
+	for (int i = 0; i < A.size(); i++) {
+		if (A[i] != elem) {
+			A[j++] = A[i];
+		}
+	}
+
+	return j;
+}
+
 void Solution_172::test() {
 	// write your test here
 

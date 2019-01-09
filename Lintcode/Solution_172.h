@@ -12,5 +12,6 @@ public:
 	 */
 	int removeElement(vector<int> &A, int elem);
 	int removeElement_2(vector<int> &A, int elem);
+	int removeElement_3(vector<int> &A, int elem);
 	void test();
 };
