@@ -27,9 +27,36 @@ ListNode * Solution_173::insertionSortList(ListNode * head) {
 ListNode * Solution_173::insertionSortList_2(ListNode * head) {
 	// write your code here
 
+	ListNode *result = new ListNode(0);
+	ListNode *origin = new ListNode(0);
+	origin->next = head;
+	ListNode *pRes(result), *pOri(origin), *pParent(origin);
+	pOri = pOri->next;
+	while (pOri) {
+		long long min(LONG_MAX);
+		ListNode *pCurrent(NULL), *pCurPar(NULL);
+		while (pOri) {
+			if (pOri->val < min) {
+				min = pOri->val;
+				pCurPar = pParent;
+				pCurrent = pOri;
+			}
+			pParent = pOri;
+			pOri = pOri->next;
+		}
 
+		// remove the node from origin to the result;
+		pCurPar->next = pCurrent->next;
+		pCurrent->next = NULL;
+		pRes->next = pCurrent;
+		pRes = pRes->next;
+		
+		// initialization
+		pOri = origin->next;
+		pParent = origin;
+	}
 
-	return nullptr;
+	return result->next;
 }
 
 bool Solution_173::cmp(const ListNode a, const ListNode b) {
@@ -53,7 +80,7 @@ void Solution_173::test() {
 	head = head->next;
 
 	// algorithm
-	head = insertionSortList(head);
+	head = insertionSortList_2(head);
 
 	// output
 	p = head;
