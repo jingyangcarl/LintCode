@@ -20,6 +20,7 @@ public:
 	 * @return: nothing
 	 */
 	void invertBinaryTree(TreeNode * root);
+	void invertBinaryTree_2(TreeNode * root);
 	void create(TreeNode * &root);
 	void preorderTraversal(TreeNode *root);
 	void test();

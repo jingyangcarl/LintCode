@@ -13,6 +13,13 @@ void Solution_175::invertBinaryTree(TreeNode * root) {
 	}
 }
 
+void Solution_175::invertBinaryTree_2(TreeNode * root) {
+	// write your code here
+
+	// Carl: try non-recursion
+
+}
+
 void Solution_175::create(TreeNode *& root) {
 	int num;
 	cin >> num;
