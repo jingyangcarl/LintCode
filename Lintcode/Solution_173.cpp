@@ -40,6 +40,7 @@ void Solution_173::test() {
 		int num;
 		cin >> num;
 		p->next = new ListNode(num);
+		p = p->next;
 	}
 	head = head->next;
 

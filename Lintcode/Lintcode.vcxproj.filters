@@ -521,5 +521,6 @@
       <Filter>资源文件</Filter>
     </Text>
     <Text Include="Solution_172.txt" />
+    <Text Include="Solution_173.txt" />
   </ItemGroup>
 </Project>
