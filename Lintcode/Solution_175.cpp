@@ -3,6 +3,10 @@
 void Solution_175::invertBinaryTree(TreeNode * root) {
 	// write your code here
 	if (root) {
+		invertBinaryTree(root->left);
+		invertBinaryTree(root->right);
+		
+		// swap
 		TreeNode * temp = root->left;
 		root->left = root->right;
 		root->right = temp;

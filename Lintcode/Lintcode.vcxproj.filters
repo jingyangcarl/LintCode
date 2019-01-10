@@ -541,5 +541,6 @@
     <Text Include="Solution_172.txt">
       <Filter>资源文件</Filter>
     </Text>
+    <Text Include="Solution_175.txt" />
   </ItemGroup>
 </Project>
