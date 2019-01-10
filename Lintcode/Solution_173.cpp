@@ -24,6 +24,14 @@ ListNode * Solution_173::insertionSortList(ListNode * head) {
 	return result->next;
 }
 
+ListNode * Solution_173::insertionSortList_2(ListNode * head) {
+	// write your code here
+
+
+
+	return nullptr;
+}
+
 bool Solution_173::cmp(const ListNode a, const ListNode b) {
 	return a.val < b.val;
 }

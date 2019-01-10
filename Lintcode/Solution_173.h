@@ -22,6 +22,7 @@ public:
 	 * @return: The head of linked list.
 	 */
 	ListNode * insertionSortList(ListNode * head);
+	ListNode * insertionSortList_2(ListNode * head);
 	static bool cmp(const ListNode a, const ListNode b);
 	void test();
 };
