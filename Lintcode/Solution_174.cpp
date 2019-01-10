@@ -3,16 +3,22 @@
 ListNode * Solution_174::removeNthFromEnd(ListNode * head, int n) {
 	// write your code here
 
+	// add head
+	ListNode *newHead = new ListNode(0);
+	newHead->next = head;
+
+	// save pointers in the vector with a NULL at the end
 	vector<ListNode *> nodeVec;
-	ListNode *p(head);
+	ListNode *p(newHead);
 	while (p) {
 		nodeVec.push_back(p);
 		p = p->next;
 	}
+	nodeVec.push_back(NULL);
 
-	nodeVec[nodeVec.size() - n - 1]->next = nodeVec[nodeVec.size() - n + 1];
+	nodeVec[nodeVec.size() - n - 2]->next = nodeVec[nodeVec.size() - n];
 
-	return head;
+	return newHead->next;
 }
 
 void Solution_174::test() {
@@ -22,10 +28,13 @@ void Solution_174::test() {
 	int n;
 	cin >> n;
 	ListNode *head = new ListNode(0);
+	ListNode *p(head);
 	for (int i = 0; i < n; i++) {
 		int num;
 		cin >> num;
-		head->next = new ListNode(num);
+		p->next = new ListNode(num);
+		p = p->next;
+		
 	}
 	head = head->next;
 	cin >> n;
@@ -34,7 +43,7 @@ void Solution_174::test() {
 	head = removeNthFromEnd(head, n);
 
 	// output;
-	ListNode *p(head);
+	p = head;
 	while (p) {
 		cout << p->val << ' ';
 		p = p->next;
