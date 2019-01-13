@@ -11,5 +11,6 @@ public:
 	 * @return: char: the first unique character in a given string
 	 */
 	char firstUniqChar(string &str);
+	char firstUniqChar_2(string &str);
 	void test();
 };

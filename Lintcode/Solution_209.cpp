@@ -17,6 +17,16 @@ char Solution_209::firstUniqChar(string & str) {
 	}
 }
 
+char Solution_209::firstUniqChar_2(string & str) {
+	// write your code here
+	vector<int> charVec(256, 0);
+	for (int i = 0; i < str.size(); i++)
+		charVec[str[i]]++;
+	for (int i = 0; i < charVec.size(); i++)
+		if (charVec[i] == 1)
+			return (char)i;
+}
+
 void Solution_209::test() {
 	// write your test here
 
