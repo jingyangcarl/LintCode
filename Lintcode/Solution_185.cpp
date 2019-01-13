@@ -15,13 +15,14 @@ vector<int> Solution_185::printZMatrix(vector<vector<int>>& matrix) {
 
 	vector<int> print;
 	bool direction(false);
+	if (matrix.size() == 0) return print;
 	for (int i = 0; i < matrix.size() + matrix[0].size() - 1; i++) {
 		int j = i;
 		while (j >= 0) {
 			if(!direction && j < matrix.size() && (i-j) < matrix[0].size())
-				print.push_back(matrix[i-j][j]);
-			if (direction && (i - j) < matrix.size() && j < matrix[0].size())
 				print.push_back(matrix[j][i - j]);
+			if (direction && (i - j) < matrix.size() && j < matrix[0].size())
+				print.push_back(matrix[i-j][j]);
 			j--;
 		}
 		direction = !direction;
