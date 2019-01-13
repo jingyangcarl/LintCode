@@ -17,6 +17,14 @@ TreeNode * Solution_177::sortedArrayToBST(vector<int>& A) {
 	// ERROR: the order of the elements in the list should be ordered
 }
 
+TreeNode * Solution_177::sortedArrayToBST_2(vector<int>& A) {
+	// write your code here
+	int left(0), right(A.size() - 1);
+	TreeNode * root = NULL;
+	sortedArrayToBST_2(root, A, left, right);
+	return root;
+}
+
 void Solution_177::sortedArrayToBST(TreeNode * &root, vector<int> &A, int totalLayer, int currentLayer) {
 	// write your code here
 	if (currentLayer <= totalLayer) {
@@ -26,6 +34,17 @@ void Solution_177::sortedArrayToBST(TreeNode * &root, vector<int> &A, int totalL
 			sortedArrayToBST(root->left, A, totalLayer, currentLayer + 1);
 			sortedArrayToBST(root->right, A, totalLayer, currentLayer + 1);
 		}
+	}
+	// ERROR: the order of the elements in the list should be ordered
+}
+
+void Solution_177::sortedArrayToBST_2(TreeNode *& root, vector<int> A, int left, int right) {
+	// write your code here
+	if (left <= right) {
+		int mid = (left + right) / 2;
+		root = new TreeNode(A[mid]);
+		sortedArrayToBST_2(root->left, A, left, mid - 1);
+		sortedArrayToBST_2(root->right, A, mid + 1, right);
 	}
 }
 
@@ -52,7 +71,7 @@ void Solution_177::test() {
 	}
 
 	// algorithm
-	TreeNode * root = sortedArrayToBST(A);
+	TreeNode * root = sortedArrayToBST_2(A);
 
 	// output;
 	preorderTraversal(root);
