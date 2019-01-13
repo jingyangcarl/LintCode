@@ -4,9 +4,15 @@ TreeNode * Solution_177::sortedArrayToBST(vector<int>& A) {
 	// write your code here
 
 	TreeNode * root;
-	sortedArrayToBEST(root, )
+	sortedArrayToBEST(root, A, 0, A.size() - 1);
 
 	return nullptr;
+}
+
+void Solution_177::sortedArrayToBEST(TreeNode *& root, vector<int> A, int left, int right) {
+	// write your code here
+	if (left >= right) {
+	}
 }
 
 void Solution_177::preorderTraversal(TreeNode * root) {
