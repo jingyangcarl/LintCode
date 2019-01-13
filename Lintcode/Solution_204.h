@@ -7,5 +7,8 @@ public:
 	/**
 	 * @return: The same instance of this class every time
 	 */
+	static Solution_204 *instance;
+
 	static Solution_204* getInstance();
+	void test();
 };
