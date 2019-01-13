@@ -14,6 +14,7 @@ TreeNode * Solution_177::sortedArrayToBST(vector<int>& A) {
 	TreeNode * root = NULL;
 	sortedArrayToBST(root, A, totalLayer, 1);
 	return root;
+	// ERROR: the order of the elements in the list should be ordered
 }
 
 void Solution_177::sortedArrayToBST(TreeNode * &root, vector<int> &A, int totalLayer, int currentLayer) {
