@@ -25,6 +25,11 @@ TreeNode * Solution_177::sortedArrayToBST_2(vector<int>& A) {
 	return root;
 }
 
+TreeNode * Solution_177::sortedArrayToBST_3(vector<int>& A) {
+	// write your code here
+	return sortedArrayToBST_3(A, 0, A.size() - 1);
+}
+
 void Solution_177::sortedArrayToBST(TreeNode * &root, vector<int> &A, int totalLayer, int currentLayer) {
 	// write your code here
 	if (currentLayer <= totalLayer) {
@@ -46,6 +51,18 @@ void Solution_177::sortedArrayToBST_2(TreeNode *& root, vector<int> A, int left,
 		sortedArrayToBST_2(root->left, A, left, mid - 1);
 		sortedArrayToBST_2(root->right, A, mid + 1, right);
 	}
+}
+
+TreeNode * Solution_177::sortedArrayToBST_3(vector<int> A, int left, int right) {
+	// write your code here
+	if (left <= right) {
+		int mid = (left + right) / 2;
+		TreeNode *root = new TreeNode(A[mid]);
+		root->left = sortedArrayToBST_3(A, left, mid - 1);
+		root->right = sortedArrayToBST_3(A, mid + 1, right);
+		return root;
+	}
+	else return nullptr;
 }
 
 void Solution_177::preorderTraversal(TreeNode * root) {
@@ -71,7 +88,7 @@ void Solution_177::test() {
 	}
 
 	// algorithm
-	TreeNode * root = sortedArrayToBST_2(A);
+	TreeNode * root = sortedArrayToBST_3(A);
 
 	// output;
 	preorderTraversal(root);

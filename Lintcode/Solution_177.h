@@ -22,8 +22,10 @@ public:
 	 */
 	TreeNode * sortedArrayToBST(vector<int> &A);
 	TreeNode * sortedArrayToBST_2(vector<int> &A);
+	TreeNode * sortedArrayToBST_3(vector<int> &A);
 	void sortedArrayToBST(TreeNode * &root, vector<int> &A, int totalLayer, int currentLayer);
 	void sortedArrayToBST_2(TreeNode * &root, vector<int> A, int left, int right);
+	TreeNode * sortedArrayToBST_3(vector<int> A, int left, int right);
 	void preorderTraversal(TreeNode * root);
 	void test();
 };
