@@ -43,8 +43,9 @@ void Solution_177::sortedArrayToBST(TreeNode * &root, vector<int> &A, int totalL
 	// ERROR: the order of the elements in the list should be ordered
 }
 
-void Solution_177::sortedArrayToBST_2(TreeNode *& root, vector<int> A, int left, int right) {
+void Solution_177::sortedArrayToBST_2(TreeNode *& root, vector<int> &A, int left, int right) {
 	// write your code here
+	// PS: when passing the parameter for recursion, remember to use reference (&A) in order to save time and space.
 	if (left <= right) {
 		int mid = (left + right) / 2;
 		root = new TreeNode(A[mid]);
@@ -53,8 +54,9 @@ void Solution_177::sortedArrayToBST_2(TreeNode *& root, vector<int> A, int left,
 	}
 }
 
-TreeNode * Solution_177::sortedArrayToBST_3(vector<int> A, int left, int right) {
+TreeNode * Solution_177::sortedArrayToBST_3(vector<int> &A, int left, int right) {
 	// write your code here
+	// PS: when passing the parameter for recursion, remember to use reference (&A) in order to save time and space.
 	if (left <= right) {
 		int mid = (left + right) / 2;
 		TreeNode *root = new TreeNode(A[mid]);
