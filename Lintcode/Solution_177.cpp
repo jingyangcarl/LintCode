@@ -2,16 +2,29 @@
 
 TreeNode * Solution_177::sortedArrayToBST(vector<int>& A) {
 	// write your code here
-
-	TreeNode * root;
-	sortedArrayToBEST(root, A, 0, A.size() - 1);
-
-	return nullptr;
+	// Carl: try non-recursion
+	// Idea: basically, the total nodes in this solution forms the question
+	// which is the sum of the geometric progression with a1 = 1, and q = 2
+	// where the formula should be sum = a1 * (1 - q^n) / (1 - q)
+	// in this case, sum = 1 * (1 - 2^n) / (1 - 2)
+	// which is sum = 2 ^n - 1;
+	int totalLayer(1);
+	while (pow(2, totalLayer) - 1 < A.size())
+		totalLayer++;
+	TreeNode * root = NULL;
+	sortedArrayToBST(root, A, totalLayer, 1);
+	return root;
 }
 
-void Solution_177::sortedArrayToBEST(TreeNode *& root, vector<int> A, int left, int right) {
+void Solution_177::sortedArrayToBST(TreeNode * &root, vector<int> &A, int totalLayer, int currentLayer) {
 	// write your code here
-	if (left >= right) {
+	if (currentLayer <= totalLayer) {
+		if (!A.empty()) {
+			root = new TreeNode(A.back());
+			A.pop_back();
+			sortedArrayToBST(root->left, A, totalLayer, currentLayer + 1);
+			sortedArrayToBST(root->right, A, totalLayer, currentLayer + 1);
+		}
 	}
 }
 
@@ -26,7 +39,7 @@ void Solution_177::preorderTraversal(TreeNode * root) {
 
 void Solution_177::test() {
 	// write your test here
-	
+
 	// intput
 	vector<int> A;
 	int n;

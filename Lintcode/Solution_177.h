@@ -21,7 +21,7 @@ public:
 	 * @return: A tree node
 	 */
 	TreeNode * sortedArrayToBST(vector<int> &A);
-	void sortedArrayToBEST(TreeNode *& root, vector<int> A, int left, int right);
+	void sortedArrayToBST(TreeNode * &root, vector<int> &A, int totalLayer, int currentLayer);
 	void preorderTraversal(TreeNode * root);
 	void test();
 };
