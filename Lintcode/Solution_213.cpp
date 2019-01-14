@@ -3,10 +3,9 @@
 string Solution_213::compress(string & originalString) {
 	// write your code here
 	if (originalString.size() == 0) return originalString;
-	int currentChar(0), count(0);
 	string res;
 	res.push_back(originalString[0]);
-	currentChar = originalString[0];
+	int currentChar(originalString[0]), count(1);
 	for (int i = 1; i < originalString.size(); i++) {
 		if (originalString[i] != currentChar) {
 			// add summary for the last char
@@ -18,8 +17,9 @@ string Solution_213::compress(string & originalString) {
 		}
 		else count++;
 	}
+	res += to_string(count);
 
-	return originalString = originalString.size() < res.size() ? originalString : res;
+	return originalString = originalString.size() <= res.size() ? originalString : res;
 }
 
 void Solution_213::test() {
