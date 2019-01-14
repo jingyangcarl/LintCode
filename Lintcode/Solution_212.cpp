@@ -2,20 +2,21 @@
 
 int Solution_212::replaceBlank(char string[], int length) {
 	// write your code here
-	char *res = new char[3 * length];
+	if (string) string = NULL;
+	std::string res(3 * length, 0);
 	int spaceLen(0);
 	for (int i = 0; i < length; i++) {
 		if (string[i] == (int)' ') {
+			res[i + spaceLen * 2] = '%';
+			res[i + spaceLen * 2 + 1] = '2';
+			res[i + spaceLen * 2 + 2] = '0';
 			spaceLen++;
-			res[i + spaceLen*3] = '%';
-			res[i + spaceLen * 3 + 1] = '2';
-			res[i + spaceLen * 3 + 2] = '0';
 		}
 		else {
-			res[i] = string[i];
+			res[i + spaceLen * 2] = string[i];
 		}
 	}
-	string = res;
+	strcpy(string, res.c_str());
 	return length + spaceLen * 2;
 }
 
@@ -24,8 +25,8 @@ void Solution_212::test() {
 
 	// input
 	string str;
-	cin >> str;
-	char * s = strdup(str.c_str());
+	getline(cin, str);
+	char * s = _strdup(str.c_str());
 
 	// algorithm and output 
 	cout << replaceBlank(s, str.size());
