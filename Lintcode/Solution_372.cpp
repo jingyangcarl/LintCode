@@ -12,6 +12,21 @@ void Solution_372::deleteNode(ListNode * node) {
 	}
 }
 
+void Solution_372::deleteNode_2(ListNode * node) {
+	// write your code here
+
+	// Just copy the next node to the current node, and delete the next one
+
+	ListNode *pre(node), *p(node->next);
+	if (p) {
+		pre->val = p->val;
+		pre->next = p->next;
+	}
+	else {
+		pre = NULL;
+	}
+}
+
 void Solution_372::test() {
 	// write your test here
 	int n;
