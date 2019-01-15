@@ -20,5 +20,6 @@ public:
 	 * @return: nothing
 	 */
 	void deleteNode(ListNode * node);
+	void deleteNode_2(ListNode * node);
 	void test();
 };

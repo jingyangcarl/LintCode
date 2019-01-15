@@ -2,12 +2,14 @@
 
 void Solution_372::deleteNode(ListNode * node) {
 	// write your code here
-	ListNode *p(node);
-	while (p->next) {
-		p->val = p->next->val;
+
+	ListNode *pre(node), *p(node->next);
+	while (p) {
+		pre->val = p->val;
 		p = p->next;
+		if (!p) pre->next = NULL;
+		else pre = pre->next;
 	}
-	p->next = NULL;
 }
 
 void Solution_372::test() {
