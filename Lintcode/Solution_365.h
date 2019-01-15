@@ -4,7 +4,7 @@
 using namespace std;
 
 
-class Solution {
+class Solution_365 {
 public:
 	/*
 	 * @param num: An integer

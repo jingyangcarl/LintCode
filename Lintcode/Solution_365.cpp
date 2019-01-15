@@ -1,12 +1,12 @@
 #include "Solution_365.h"
 
-int Solution::countOnes(int num) {
+int Solution_365::countOnes(int num) {
 	// write your code here
 	bitset<32> bitNum(num);
 	return bitNum.count();
 }
 
-void Solution::test() {
+void Solution_365::test() {
 	// write your test here
 
 	// input
