@@ -16,10 +16,6 @@ void Solution_373::partitionArray(vector<int>& nums) {
 		}
 		front++;
 	}
-
-	// Needed to figure out
-	// the output and the expected result are the same
-	// Accept not available
 }
 
 void Solution_373::test() {
