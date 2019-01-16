@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 using namespace std;
 
 // Definition of TreeNode:
@@ -20,6 +21,7 @@ public:
 	 * @return: root of new tree
 	 */
 	TreeNode * cloneTree(TreeNode * root);
+	TreeNode * cloneTree_2(TreeNode * root);
 	void cloneTree(TreeNode * root, TreeNode *& copy);
 	void create(TreeNode * &root);
 	void preorderTraversal(TreeNode * root);

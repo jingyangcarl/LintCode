@@ -7,6 +7,12 @@ TreeNode * Solution_375::cloneTree(TreeNode * root) {
 	return copy;
 }
 
+TreeNode * Solution_375::cloneTree_2(TreeNode * root) {
+	// write your code here
+	
+	// Idea: try non-recursion
+}
+
 void Solution_375::cloneTree(TreeNode * root, TreeNode * &copy) {
 	// write your code here
 	if (root) {
