@@ -11,6 +11,7 @@ TreeNode * Solution_375::cloneTree_2(TreeNode * root) {
 	// write your code here
 	
 	// Idea: try non-recursion
+	return nullptr;
 }
 
 void Solution_375::cloneTree(TreeNode * root, TreeNode * &copy) {
