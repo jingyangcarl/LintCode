@@ -6,7 +6,7 @@ void Solution_373::partitionArray(vector<int>& nums) {
 	// using two index pointer, one for iteration, another for swap from the back
 
 	int front(0), back(nums.size() - 1);
-	while (front < back) {
+	while (front <= back) {
 		if (nums[front] % 2 == 0) {
 			while (nums[back] % 2 != 1) back--;
 			nums[front] = nums[front] ^ nums[back];
