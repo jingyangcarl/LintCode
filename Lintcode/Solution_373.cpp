@@ -8,7 +8,7 @@ void Solution_373::partitionArray(vector<int>& nums) {
 	int front(0), back(nums.size() - 1);
 	while (front <= back) {
 		if (nums[front] % 2 == 0) {
-			while (nums[back] % 2 != 1) back--;
+			while (nums[back] % 2 != 1 && back > front) back--;
 			nums[front] = nums[front] ^ nums[back];
 			nums[back] = nums[front] ^ nums[back];
 			nums[front] = nums[front] ^ nums[back];
