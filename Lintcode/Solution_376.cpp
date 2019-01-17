@@ -10,12 +10,14 @@ vector<vector<int>> Solution_376::binaryTreePathSum(TreeNode * root, int target)
 }
 
 void Solution_376::binaryTreePathSum(TreeNode * root, int target, int current, vector<vector<int>>& paths, vector<int> &currentPath) {
-	if (root && current < target) {
+	// write your code here
+	if (root) {
 		currentPath.push_back(root->val);
-		if (current + root->val == target)
-			paths.push_back(currentPath);
 		binaryTreePathSum(root->left, target, current + root->val, paths, currentPath);
 		binaryTreePathSum(root->right, target, current + root->val, paths, currentPath);
+		if (!root->left && !root->right && current + root->val == target) {
+			paths.push_back(currentPath);
+		}
 		currentPath.pop_back();
 	}
 }
