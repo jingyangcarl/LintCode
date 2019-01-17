@@ -521,6 +521,9 @@
     <ClInclude Include="Solution_376.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Solution_389.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Solution_30.txt">

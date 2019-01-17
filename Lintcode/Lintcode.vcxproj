@@ -165,6 +165,7 @@
     <ClInclude Include="Solution_373.h" />
     <ClInclude Include="Solution_375.h" />
     <ClInclude Include="Solution_376.h" />
+    <ClInclude Include="Solution_389.h" />
     <ClInclude Include="Solution_39.h" />
     <ClInclude Include="Solution_4.h" />
     <ClInclude Include="Solution_41.h" />
