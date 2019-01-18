@@ -1,25 +1,28 @@
 #include "Solution_397.h"
 
-int Solution::longestIncreasingContinuousSubsequence(vector<int>& A) {
+int Solution_397::longestIncreasingContinuousSubsequence(vector<int>& A) {
 	// write your code here
 
 	bool direction(true), currentDir(true);
-	if (A.empty()) return 0;
-	int num(A[0]), length(1);
+	if (A.size() <= 1) return A.size();
+	int num(A[0]), length(1), maxLen(0);
 	// true for increase, false for decrease
+	if (A[1]) direction = A[0] < A[1] ? true : false;
 	for (int i = 1; i < A.size(); i++) {
 		currentDir = A[i] > num ? true : false;
-		if (currentDir == direction) length++;
+		if (currentDir == direction)
+			length++;
 		else {
 			direction = !direction;
+			maxLen = length > maxLen ? length : maxLen;
 			length = 1;
 		}
+		num = A[i];
 	}
-
-	return length;
+	return length > maxLen ? length : maxLen;
 }
 
-void Solution::test() {
+void Solution_397::test() {
 	// write your test here
 
 	// input

@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-class Solution {
+class Solution_397 {
 public:
 	/**
 	 * @param A: An array of Integer
