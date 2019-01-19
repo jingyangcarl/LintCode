@@ -81,6 +81,7 @@
     <ClCompile Include="Solution_39.cpp" />
     <ClCompile Include="Solution_397.cpp" />
     <ClCompile Include="Solution_4.cpp" />
+    <ClCompile Include="Solution_407.cpp" />
     <ClCompile Include="Solution_41.cpp" />
     <ClCompile Include="Solution_44.cpp" />
     <ClCompile Include="Solution_46.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Solution_39.h" />
     <ClInclude Include="Solution_397.h" />
     <ClInclude Include="Solution_4.h" />
+    <ClInclude Include="Solution_407.h" />
     <ClInclude Include="Solution_41.h" />
     <ClInclude Include="Solution_44.h" />
     <ClInclude Include="Solution_46.h" />
@@ -240,6 +242,7 @@
     <Text Include="Solution_156.txt" />
     <Text Include="Solution_167.txt" />
     <Text Include="Solution_174.txt" />
+    <Text Include="Solution_407.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
