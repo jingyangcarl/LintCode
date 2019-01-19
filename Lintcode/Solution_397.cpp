@@ -3,23 +3,24 @@
 int Solution_397::longestIncreasingContinuousSubsequence(vector<int>& A) {
 	// write your code here
 
-	bool direction(true), currentDir(true);
+	bool lastDir, currentDir;
 	if (A.size() <= 1) return A.size();
-	int num(A[0]), length(1), maxLen(0);
+	int length(1), maxLen(1);
 	// true for increase, false for decrease
-	if (A[1]) direction = A[0] < A[1] ? true : false;
-	for (int i = 1; i < A.size(); i++) {
-		currentDir = A[i] > num ? true : false;
-		if (currentDir == direction)
+	for (int i = 0; i < A.size() - 1; i++) {
+		currentDir = A[i] < A[i + 1] ? true : false;
+		if (i != 0) {
 			length++;
-		else {
-			direction = !direction;
 			maxLen = length > maxLen ? length : maxLen;
-			length = 1;
+			if (lastDir != currentDir) {
+				lastDir = !lastDir;
+				length = 1;
+			}
 		}
-		num = A[i];
+		else lastDir = currentDir;
 	}
-	return length > maxLen ? length : maxLen;
+
+	return maxLen = length + 1 > maxLen ? length + 1 : maxLen;
 }
 
 void Solution_397::test() {
