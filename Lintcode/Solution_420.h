@@ -1,9 +1,10 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
-class Solution {
+class Solution_420 {
 public:
 	/**
 	 * @param n: the nth
