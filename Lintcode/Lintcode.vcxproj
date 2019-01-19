@@ -84,6 +84,7 @@
     <ClCompile Include="Solution_407.cpp" />
     <ClCompile Include="Solution_408.cpp" />
     <ClCompile Include="Solution_41.cpp" />
+    <ClCompile Include="Solution_413.cpp" />
     <ClCompile Include="Solution_44.cpp" />
     <ClCompile Include="Solution_46.cpp" />
     <ClCompile Include="Solution_5.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="Solution_407.h" />
     <ClInclude Include="Solution_408.h" />
     <ClInclude Include="Solution_41.h" />
+    <ClInclude Include="Solution_413.h" />
     <ClInclude Include="Solution_44.h" />
     <ClInclude Include="Solution_46.h" />
     <ClInclude Include="Solution_5.h" />
