@@ -39,7 +39,7 @@ void Solution_433::numIslands(int i, int j, vector<vector<bool>>& grid, vector<v
 	// write your code here
 	if (grid[i][j] && !isVisited[i][j]) {
 		isVisited[i][j] = true;
-		//if (i - 1 > 0) numIslands(i - 1, j, grid, visited);
+		if (i - 1 >= 0) numIslands(i - 1, j, grid, isVisited);
 		if (i + 1 < grid.size()) numIslands(i + 1, j, grid, isVisited);
 		if (j - 1 >= 0) numIslands(i, j - 1, grid, isVisited);
 		if (j + 1 < grid[0].size()) numIslands(i, j + 1, grid, isVisited);
