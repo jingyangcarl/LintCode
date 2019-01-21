@@ -14,12 +14,16 @@ int Solution_433::numIslands(vector<vector<bool>>& grid) {
 
 				cout << "island position: (" << i << ' ' << j << ")" << endl;
 				for (int k = 0; k < grid.size(); k++) {
-					for (int h = 0; h < grid[0].size(); h++) {
-						cout << grid[k][h] << ' ';
+					for (int j_grid = 0; j_grid < grid[0].size(); j_grid++) {
+						if (i == k && j == j_grid) cout << '*';
+						else if (j == j_grid) cout << ' ';
+						cout << grid[k][j_grid] << ' ';
 					}
-					cout << ' ';
-					for (int l = 0; l < grid[0].size(); l++) {
-						cout << isVisited[k][l] << ' ';
+					cout << " | ";
+					for (int j_visited = 0; j_visited < grid[0].size(); j_visited++) {
+						if (i == k && j == j_visited) cout << '*';
+						else if (j == j_visited) cout << ' ';
+						cout << isVisited[k][j_visited] << ' ';
 					}
 					cout << endl;
 				}
@@ -37,7 +41,7 @@ void Solution_433::numIslands(int i, int j, vector<vector<bool>>& grid, vector<v
 		isVisited[i][j] = true;
 		//if (i - 1 > 0) numIslands(i - 1, j, grid, visited);
 		if (i + 1 < grid.size()) numIslands(i + 1, j, grid, isVisited);
-		if (j - 1 > 0) numIslands(i, j - 1, grid, isVisited);
+		if (j - 1 >= 0) numIslands(i, j - 1, grid, isVisited);
 		if (j + 1 < grid[0].size()) numIslands(i, j + 1, grid, isVisited);
 	}
 }
