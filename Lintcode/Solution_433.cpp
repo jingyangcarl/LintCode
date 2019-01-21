@@ -12,12 +12,18 @@ int Solution_433::numIslands(vector<vector<bool>>& grid) {
 				islands++;
 				numIslands(i, j, grid, isVisited);
 
+				cout << "island position: (" << i << ' ' << j << ")" << endl;
 				for (int k = 0; k < grid.size(); k++) {
+					for (int h = 0; h < grid[0].size(); h++) {
+						cout << grid[k][h] << ' ';
+					}
+					cout << ' ';
 					for (int l = 0; l < grid[0].size(); l++) {
-						cout << isVisited[i][j] << ' ';
+						cout << isVisited[k][l] << ' ';
 					}
 					cout << endl;
 				}
+				cout << endl;
 			}
 		}
 	}
