@@ -1,14 +1,15 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <stack>
 using namespace std;
 
-class Solution_422 {
+class Solution_423 {
 public:
 	/**
 	 * @param s: A string
-	 * @return: the length of last word
+	 * @return: whether the string is a valid parentheses
 	 */
-	int lengthOfLastWord(string &s);
+	bool isValidParentheses(string &s);
 	void test();
 };

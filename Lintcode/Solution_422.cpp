@@ -1,6 +1,6 @@
 #include "Solution_422.h"
 
-int Solution::lengthOfLastWord(string & s) {
+int Solution_422::lengthOfLastWord(string & s) {
 	// write your code here
 
 	int lastLength(0);
@@ -12,7 +12,7 @@ int Solution::lengthOfLastWord(string & s) {
 	return lastLength;
 }
 
-void Solution::test() {
+void Solution_422::test() {
 	// write your test here
 
 	// input
