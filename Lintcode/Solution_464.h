@@ -10,6 +10,7 @@ public:
 	 * @return: nothing
 	 */
 	void sortIntegers2(vector<int> &A);
+	void sortIntegers2(vector<int> &A, int left, int right);
 	void sortIntegers2_2(vector<int> &A);
 	void sortIntegers2_3(vector<int> &A);
 	void test();
