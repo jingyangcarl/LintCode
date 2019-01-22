@@ -1,6 +1,6 @@
 #include "Solution_457.h"
 
-int Solution::findPosition(vector<int>& nums, int target) {
+int Solution_457::findPosition(vector<int>& nums, int target) {
 	// write your code here
 	int left(0), right(nums.size());
 	while (left < right) {
@@ -12,7 +12,7 @@ int Solution::findPosition(vector<int>& nums, int target) {
 	return -1;
 }
 
-void Solution::test() {
+void Solution_457::test() {
 	// write your test here
 
 	// input

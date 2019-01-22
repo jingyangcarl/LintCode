@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-class Solution {
+class Solution_457 {
 public:
 	/**
 	 * @param nums: An integer array sorted in ascending order
