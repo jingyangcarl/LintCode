@@ -3,6 +3,7 @@
 void Solution_453::flatten(TreeNode * root) {
 	// write your code here
 
+	if (!root) return;
 	stack<TreeNode *> nodeStack;
 	nodeStack.push(root);
 	while (!nodeStack.empty()) {
@@ -14,6 +15,8 @@ void Solution_453::flatten(TreeNode * root) {
 			current->right = current->left;
 			current->left = NULL;
 		}
+		if (!current->left && !current->right)
+			current->right = nodeStack.empty() ? NULL : nodeStack.top();
 	}
 }
 
