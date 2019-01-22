@@ -9,21 +9,21 @@ void Solution_464::sortIntegers2(vector<int>& A) {
 
 void Solution_464::sortIntegers2(vector<int>& A, int left, int right) {
 	// write your code here
-	int i(left), j(right);
-	while (i < j) {
-		while (A[i] <= A[0]) i++;
-		while (A[j] > A[0]) j--;
+	if (left >= right) return;
+	else {
+		int i(left), j(right);
+		int b = i;
 
-		A[i] = A[i] ^ A[j];
-		A[j] = A[i] ^ A[j];
-		A[i] = A[i] ^ A[j];
+		while (i < j) {
+			while (i < j && A[j] > A[b]) j--;
+			while (i < j && A[i] <= A[b]) i++;
+			if (i != j) { A[i] = A[i] ^ A[j]; A[j] = A[j] ^ A[i]; A[i] = A[i] ^ A[j]; }
+		}
+
+		if (i != b) { A[b] = A[b] ^ A[i]; A[i] = A[i] ^ A[b]; A[b] = A[b] ^ A[i]; }
+		sortIntegers2(A, left, j - 1);
+		sortIntegers2(A, j + 1, right);
 	}
-	A[0] = A[0] ^ A[i];
-	A[i] = A[0] ^ A[i];
-	A[0] = A[0] ^ A[i];
-
-	sortIntegers2(A, left, i);
-	sortIntegers2(A, i + 1, right);
 }
 
 void Solution_464::sortIntegers2_2(vector<int>& A) {
@@ -45,7 +45,7 @@ void Solution_464::test() {
 	vector<int> A;
 	int n;
 	cin >> n;
-	for (int i = 0; i < A.size(); i++) {
+	for (int i = 0; i < n; i++) {
 		int num;
 		cin >> num;
 		A.push_back(num);
