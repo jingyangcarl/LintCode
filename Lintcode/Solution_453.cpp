@@ -2,7 +2,19 @@
 
 void Solution_453::flatten(TreeNode * root) {
 	// write your code here
-	
+
+	stack<TreeNode *> nodeStack;
+	nodeStack.push(root);
+	while (!nodeStack.empty()) {
+		TreeNode * current = nodeStack.top();
+		nodeStack.pop();
+		if (current->right) nodeStack.push(current->right);
+		if (current->left) {
+			nodeStack.push(current->left);
+			current->right = current->left;
+			current->left = NULL;
+		}
+	}
 }
 
 void Solution_453::create(TreeNode * &root) {
