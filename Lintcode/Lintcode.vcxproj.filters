@@ -765,5 +765,6 @@
     <Text Include="Solution_453.txt" />
     <Text Include="Solution_464.txt" />
     <Text Include="Solution_469.txt" />
+    <Text Include="Solution_474.txt" />
   </ItemGroup>
 </Project>
