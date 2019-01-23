@@ -30,6 +30,7 @@ void Solution_464::sortIntegers2_2(vector<int>& A) {
 	// write your code here
 
 	// merge sort
+	// leave for CSCI 570 - Chapter 5 Divied and Conquer
 }
 
 void Solution_464::sortIntegers2_3(vector<int>& A) {

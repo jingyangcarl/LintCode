@@ -1,10 +1,10 @@
 #include <iostream>
-#include "Solution_464.h"
+#include "Solution_469.h"
 using namespace std;
 
 int main() {
 
-	Solution_464 solution;
+	Solution_469 solution;
 	solution.test();
 
 	getchar();
