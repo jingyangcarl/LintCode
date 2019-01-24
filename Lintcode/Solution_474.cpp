@@ -3,9 +3,29 @@
 ParentTreeNode * Solution_474::lowestCommonAncestorII(ParentTreeNode * root, ParentTreeNode * A, ParentTreeNode * B) {
 	// write your code here
 
-	getchar();
+	vector<ParentTreeNode *> traceA, traceB;
+	ParentTreeNode *p(NULL);
+	p = A;
+	while (p) {
+		traceA.push_back(p);
+		p = p->parent;
+	}
+	p = B;
+	while (p) {
+		traceB.push_back(p);
+		p = p->parent;
+	}
 
-	return nullptr;
+	ParentTreeNode * current(NULL);
+	while (!traceA.empty() && !traceB.empty()) {
+		current = traceA.back();
+		if (traceA.back() == traceB.back()) {
+			traceA.pop_back();
+			traceB.pop_back();
+		}
+		else return current;
+	}
+	return current;
 }
 
 void Solution_474::create(ParentTreeNode *& root, ParentTreeNode * parent) {
@@ -28,6 +48,14 @@ void Solution_474::preorderTraversal(ParentTreeNode * root) {
 	}
 }
 
+void Solution_474::preorderFind(ParentTreeNode * root, int val, ParentTreeNode *& node) {
+	if (root) {
+		if (root->val == val) node = root;
+		preorderFind(root->left, val, node);
+		preorderFind(root->right, val, node);
+	}
+}
+
 void Solution_474::test() {
 	// write your test here
 
@@ -35,10 +63,11 @@ void Solution_474::test() {
 	ParentTreeNode *root(NULL);
 	create(root, NULL);
 	ParentTreeNode *A, *B;
-	A = new ParentTreeNode();
-	cin >> A->val;
-	B = new ParentTreeNode();
-	cin >> B->val;
+	int val;
+	cin >> val;
+	preorderFind(root, val, A);
+	cin >> val;
+	preorderFind(root, val, B);
 
 	// algorithm
 	ParentTreeNode *node = lowestCommonAncestorII(root, A, B);

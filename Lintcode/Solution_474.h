@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 using namespace std;
 
 // Definition of ParentTreeNode:
@@ -20,5 +21,6 @@ public:
 	ParentTreeNode * lowestCommonAncestorII(ParentTreeNode * root, ParentTreeNode * A, ParentTreeNode * B);
 	void create(ParentTreeNode * &root, ParentTreeNode * parent);
 	void preorderTraversal(ParentTreeNode * root);
+	void preorderFind(ParentTreeNode * root, int val, ParentTreeNode *& node);
 	void test();
 };
