@@ -18,12 +18,12 @@ ParentTreeNode * Solution_474::lowestCommonAncestorII(ParentTreeNode * root, Par
 
 	ParentTreeNode * current(NULL);
 	while (!traceA.empty() && !traceB.empty()) {
-		current = traceA.back();
 		if (traceA.back() == traceB.back()) {
+			current = traceA.back();
 			traceA.pop_back();
 			traceB.pop_back();
 		}
-		else return current;
+		else break;
 	}
 	return current;
 }
