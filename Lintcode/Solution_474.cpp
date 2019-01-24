@@ -28,6 +28,27 @@ ParentTreeNode * Solution_474::lowestCommonAncestorII(ParentTreeNode * root, Par
 	return current;
 }
 
+ParentTreeNode * Solution_474::lowestCommonAncestorII_2(ParentTreeNode * root, ParentTreeNode * A, ParentTreeNode * B) {
+	// write your code here
+
+	// Carl: 
+	// when doing the while loop for B
+	vector<bool> traceA(65535, 0);
+	ParentTreeNode *p(A);
+	p = A;
+	while (p) {
+		traceA[p->val] = 1;
+		p = p->parent;
+	}
+	p = B;
+	while (p) {
+		if (traceA[p->val] == 1) return p;
+		p = p->parent;
+	}
+
+	// ERROR: when the node is with a negative value
+}
+
 void Solution_474::create(ParentTreeNode *& root, ParentTreeNode * parent) {
 	int num;
 	cin >> num;
@@ -70,7 +91,7 @@ void Solution_474::test() {
 	preorderFind(root, val, B);
 
 	// algorithm
-	ParentTreeNode *node = lowestCommonAncestorII(root, A, B);
+	ParentTreeNode *node = lowestCommonAncestorII_2(root, A, B);
 
 	// output
 	cout << node->val << endl;
