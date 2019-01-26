@@ -3,7 +3,7 @@
 #include <unordered_set>
 using namespace std;
 
-class Solution {
+class Solution_488 {
 public:
 	/**
 	 * @param n: An integer
