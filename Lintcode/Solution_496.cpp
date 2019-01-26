@@ -3,5 +3,7 @@
 void Solution_496::test() {
 
 	ToyFactory factory = ToyFactory();
-	Toy toy = factory.getToy('Dog');
+	string type = "Dog";
+	Toy *toy = factory.getToy(type);
+	toy->talk();
 }
