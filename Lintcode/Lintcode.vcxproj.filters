@@ -336,6 +336,15 @@
     <ClCompile Include="Solution_496.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Solution_37.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_145.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_366.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -659,7 +668,13 @@
     <ClInclude Include="Solution_496.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Solution_499.h">
+    <ClInclude Include="Solution_37.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Solution_145.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Solution_366.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -37,6 +37,7 @@
     <ClCompile Include="Solution_14.cpp" />
     <ClCompile Include="Solution_141.cpp" />
     <ClCompile Include="Solution_142.cpp" />
+    <ClCompile Include="Solution_145.cpp" />
     <ClCompile Include="Solution_15.cpp" />
     <ClCompile Include="Solution_155.cpp" />
     <ClCompile Include="Solution_156.cpp" />
@@ -73,6 +74,8 @@
     <ClCompile Include="Solution_32.cpp" />
     <ClCompile Include="Solution_35.cpp" />
     <ClCompile Include="Solution_365.cpp" />
+    <ClCompile Include="Solution_366.cpp" />
+    <ClCompile Include="Solution_37.cpp" />
     <ClCompile Include="Solution_372.cpp" />
     <ClCompile Include="Solution_373.cpp" />
     <ClCompile Include="Solution_375.cpp" />
@@ -143,6 +146,7 @@
     <ClInclude Include="Solution_138.h" />
     <ClInclude Include="Solution_141.h" />
     <ClInclude Include="Solution_142.h" />
+    <ClInclude Include="Solution_145.h" />
     <ClInclude Include="Solution_155.h" />
     <ClInclude Include="Solution_156.h" />
     <ClInclude Include="Solution_157.h" />
@@ -184,6 +188,8 @@
     <ClInclude Include="Solution_31.h" />
     <ClInclude Include="Solution_35.h" />
     <ClInclude Include="Solution_365.h" />
+    <ClInclude Include="Solution_366.h" />
+    <ClInclude Include="Solution_37.h" />
     <ClInclude Include="Solution_372.h" />
     <ClInclude Include="Solution_373.h" />
     <ClInclude Include="Solution_375.h" />
@@ -216,7 +222,6 @@
     <ClInclude Include="Solution_491.h" />
     <ClInclude Include="Solution_495.h" />
     <ClInclude Include="Solution_496.h" />
-    <ClInclude Include="Solution_499.h" />
     <ClInclude Include="Solution_5.h" />
     <ClInclude Include="Solution_50.h" />
     <ClInclude Include="Solution_53.h" />
@@ -300,32 +305,32 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{22F0B3B9-6E5F-4345-A05F-AD47810794A6}</ProjectGuid>
     <RootNamespace>Lintcode</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
